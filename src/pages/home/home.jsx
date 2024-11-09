@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import Intro from '../../components/intro/intro'
+import AboutMeSectiono from '../../components/about/about'
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
 
         <section>
             <Intro/>
+            <AboutMeSectiono/>
         </section>
         <footer>
             <Footer/>
