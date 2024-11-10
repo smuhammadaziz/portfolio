@@ -51,7 +51,7 @@ function Header() {
             <li onClick={handleNav} className="hover:underline cursor-pointer">Projects</li>
             <li onClick={handleNav} className="hover:underline cursor-pointer">Achievements</li>
             <li onClick={handleNav} className="hover:underline cursor-pointer">Resume</li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2">Contact</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10add py-2">Contact</li>
           </ul>
         </div>
       </div>
