@@ -7,7 +7,7 @@ function Footer() {
       <div className="container mx-auto px-6 md:px-40 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
         
         {/* Copyright */}
-        <p className="text-gray-700 mb-4 md:mb-0 text-sm md:text-base">
+        <p className="text-black  mb-4 md:mb-0 text-md md:text-base">
           Copyright © Muhammadaziz 2024
         </p>
         
