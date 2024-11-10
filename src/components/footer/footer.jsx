@@ -25,9 +25,8 @@ function Footer() {
         </div>
 
         {/* Footer Links */}
-        <div className="flex gap-6 text-black font-semibold text-sm md:text-base">
-          <a href="#" className="hover:underline">About</a>
-          <a href="#" className="hover:underline">Portfolio</a>
+        <div className="flex gap-6 text-black font-semibold text-sm md:text-base text-center">
+          <a href="#" className="hover:underline">About Me</a>
           <a href="#" className="hover:underline">Resume</a>
         </div>
       </div>
