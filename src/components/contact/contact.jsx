@@ -23,7 +23,7 @@ function ContactSection() {
               Your Name *
             </label>
             <input
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-300 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="text"
               id="name"
               placeholder="John Doe"
@@ -36,7 +36,7 @@ function ContactSection() {
               Your Email *
             </label>
             <input
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-300 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="email"
               id="email"
               placeholder="you@example.com"
@@ -49,7 +49,7 @@ function ContactSection() {
               Your Phone
             </label>
             <input
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-300 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="tel"
               id="phone"
               placeholder="+998 99 999-99-99"
@@ -61,7 +61,7 @@ function ContactSection() {
               Your Message *
             </label>
             <textarea
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-300 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               id="message"
               placeholder="Write your message here..."
               rows="5"
