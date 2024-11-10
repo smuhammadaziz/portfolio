@@ -12,7 +12,7 @@ function Footer() {
         </p>
         
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 mb-4 md:mb-0">
+        <div className="flex justify-center mt-3 lg:mt-0 gap-6 mb-4 md:mb-0">
           <a href="#" className="bg-indigo-900 text-white p-3 rounded-full hover:bg-indigo-700 transition duration-300">
             <FaTelegram size={20} />
           </a>
@@ -25,7 +25,7 @@ function Footer() {
         </div>
 
         {/* Footer Links */}
-        <div className="flex gap-6 text-black font-semibold text-sm md:text-base text-center">
+        <div className="flex gap-6 mt-3 lg:mt-0 text-black font-semibold text-sm md:text-base text-center">
           <a href="#" className="hover:underline">About Me</a>
           <a href="#" className="hover:underline">Resume</a>
         </div>
