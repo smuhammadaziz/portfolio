@@ -46,11 +46,13 @@ function Header() {
           {/* Close Button in the Top Right */}
 
           <ul className="space-y-8 text-center text-2xl mt-10">
-            <li onClick={handleNav} className="hover:underline cursor-pointer">About</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">About Me</li>
             <li onClick={handleNav} className="hover:underline cursor-pointer">Skills</li>
             <li onClick={handleNav} className="hover:underline cursor-pointer">Projects</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Work Experience</li>
             <li onClick={handleNav} className="hover:underline cursor-pointer">Achievements</li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer">Resume</li>
+            <li className="text-lg text-slate-700 hover:underline cursor-pointer flex items-center">Resume <span className="ms-2 mt-1">
+          <MdOutlineFileDownload/></span></li>
             <li onClick={handleNav} className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10add py-2">Contact</li>
           </ul>
         </div>
