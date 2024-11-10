@@ -17,13 +17,13 @@ function AboutMeSectiono() {
           
           {/* Social Links */}
           <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex space-x-4'>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className='bg-slate-300 p-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300'>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className='bg-indigo-900 p-3 rounded-full text-white hover:bg-blue-600 transition duration-300'>
               <FaLinkedin size={20} />
             </a>
-            <a href="https://telegram.com" target="_blank" rel="noopener noreferrer" className='bg-slate-300 p-3 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition duration-300'>
+            <a href="https://telegram.com" target="_blank" rel="noopener noreferrer" className='bg-indigo-900 p-3 rounded-full text-white hover:bg-blue-500 transition duration-300'>
               <FaTelegram size={20} />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className='bg-slate-300 p-3 rounded-full text-gray-700 hover:bg-gray-700 hover:text-white transition duration-300'>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className='bg-indigo-900 p-3 rounded-full text-white hover:bg-gray-700 transition duration-300'>
               <FaGithub size={20} />
             </a>
           </div>
