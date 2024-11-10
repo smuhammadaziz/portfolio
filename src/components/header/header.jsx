@@ -53,7 +53,7 @@ function Header() {
             <li onClick={handleNav} className="hover:underline cursor-pointer">Achievements</li>
             <li className="text-lg text-slate-700 hover:underline cursor-pointer flex items-center">Resume <span className="ms-2 mt-1">
           <MdOutlineFileDownload/></span></li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10add py-2">Contact</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2">Contact</li>
           </ul>
         </div>
       </div>
