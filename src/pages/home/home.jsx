@@ -4,6 +4,7 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import Intro from '../../components/intro/intro'
 import AboutMeSectiono from '../../components/about/about'
+import ContactSection from '../../components/contact/contact'
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
         <section>
             <Intro/>
             <AboutMeSectiono/>
+            <ContactSection/>
         </section>
         <footer>
             <Footer/>
