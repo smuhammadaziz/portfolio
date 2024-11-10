@@ -1,26 +1,62 @@
 import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
   const [nav, setNav] = useState(false);
 
-  return (
-    <header className=" block py-4 ">
-      <div className="container mx-auto px-40  flex justify-between text-center items-center">
-      <div>
-        <a href="#" className="text-black text-3xl font-bold font-sans text-indigo-900 hover:text-indigo-950">Muhammadaziz</a>
-      </div>
-      <ul className="flex ">
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">About</li>
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">Skills</li>
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">Projects</li>
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">Achievements</li>
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">Contact</li>
-        <li className="mx-4 text-lg text-slate-700 hover:underline hover:cursor-pointer  ">Resume</li>
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
-      </ul>
-      <div>
-        <button className="border-indigo-950 bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg border-2 px-7 py-2 ">Contact</button>
-      </div>
+  return (
+    <header className="block py-4 bg-white shadow-md">
+      <div className="container mx-auto px-6 md:px-40 flex justify-between items-center">
+        <a href="#" className="text-3xl font-bold text-indigo-900 hover:text-indigo-950">
+          Muhammadaziz
+        </a>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">About</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Skills</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Projects</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Achievements</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Contact</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Resume</li>
+        </ul>
+
+        <button className="hidden md:block border-2 border-indigo-950 bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-7 py-2">
+          Contact
+        </button>
+
+        {/* Mobile Hamburger Icon */}
+        <div className="md:hidden z-20" onClick={handleNav}>
+          {nav ? <FaTimes size={25} className="text-indigo-900" /> : <FaBars size={25} className="text-indigo-900" />}
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed top-0 left-0 w-full h-full bg-indigo-900 text-white flex flex-col items-center justify-center transform ${
+            nav ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out z-10`}
+        >
+          {/* Close Button in the Top Right */}
+          <button
+            onClick={handleNav}
+            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors duration-200"
+          >
+            <FaTimes size={30} />
+          </button>
+
+          <ul className="space-y-8 text-center text-2xl mt-10">
+            <li onClick={handleNav} className="hover:underline cursor-pointer">About</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Skills</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Projects</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Achievements</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Contact</li>
+            <li onClick={handleNav} className="hover:underline cursor-pointer">Resume</li>
+          </ul>
+        </div>
       </div>
     </header>
   );
