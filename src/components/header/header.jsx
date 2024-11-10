@@ -31,7 +31,7 @@ function Header() {
 
         {/* Mobile Hamburger Icon */}
         <div className="md:hidden z-20" onClick={handleNav}>
-          {nav ? <FaTimes size={25} className="text-indigo-900" /> : <FaBars size={25} className="text-indigo-900" />}
+          {nav ? <FaTimes size={25} className="text-white" /> : <FaBars size={25} className="text-indigo-900" />}
         </div>
 
         {/* Mobile Menu */}
@@ -41,12 +41,6 @@ function Header() {
           } transition-transform duration-300 ease-in-out z-10`}
         >
           {/* Close Button in the Top Right */}
-          <button
-            onClick={handleNav}
-            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            <FaTimes size={30} />
-          </button>
 
           <ul className="space-y-8 text-center text-2xl mt-10">
             <li onClick={handleNav} className="hover:underline cursor-pointer">About</li>
