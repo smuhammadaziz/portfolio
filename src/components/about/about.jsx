@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import mylogo from '../../assets/3.jpg';
 import { FaLinkedin, FaTelegram, FaGithub } from "react-icons/fa";
 
@@ -39,6 +40,11 @@ function AboutMeSectiono() {
           <p className='text-gray-700'>
             Currently, I'm pursuing a Master of Engineering (M.Eng.) in Computer Science and Artificial Intelligence.
           </p>
+          
+          {/* See More Button */}
+          <NavLink to="/about" className="inline-block mt-10 py-3 px-8 bg-indigo-900 text-white font-semibold rounded hover:bg-indigo-950 transition duration-300">
+            Read More
+          </NavLink>
         </div>
       </div>
     </div>

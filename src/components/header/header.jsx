@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import { MdOutlineFileDownload } from "react-icons/md";
+
 function Header() {
   const [nav, setNav] = useState(false);
 
@@ -17,11 +19,13 @@ function Header() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">About</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">About Me</li>
           <li className="text-lg text-slate-700 hover:underline cursor-pointer">Skills</li>
           <li className="text-lg text-slate-700 hover:underline cursor-pointer">Projects</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Work Experience</li>
           <li className="text-lg text-slate-700 hover:underline cursor-pointer">Achievements</li>
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">Resume</li>
+          <li className="text-lg text-slate-700 hover:underline cursor-pointer flex items-center">Resume <span className="ms-2 mt-1">
+          <MdOutlineFileDownload/></span></li>
         </ul>
 
         <button className="hidden md:block border-2 border-indigo-950 bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-7 py-2">
