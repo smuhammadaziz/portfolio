@@ -6,6 +6,7 @@ import Intro from "../../components/intro/intro";
 import AboutMeSectiono from "../../components/about/about";
 import ContactSection from "../../components/contact/contact";
 import SkillsSection from "../../components/skills/skills";
+import ProjectSection from "../../components/projects/projects";
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
         <Intro />
         <AboutMeSectiono />
         <SkillsSection />
+        <ProjectSection />
         <ContactSection />
       </section>
       <footer>
