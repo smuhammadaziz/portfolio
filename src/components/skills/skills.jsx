@@ -161,7 +161,7 @@ function SkillsSection() {
 
   return (
     <div className="py-20 bg-slate-100">
-      <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
+      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Skills
       </h2>
       <div className="container mx-auto px-6 md:px-40 text-center">

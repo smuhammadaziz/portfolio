@@ -7,6 +7,7 @@ import AboutMeSectiono from "../../components/about/about";
 import ContactSection from "../../components/contact/contact";
 import SkillsSection from "../../components/skills/skills";
 import ProjectSection from "../../components/projects/projects";
+import ExperienceSection from "../../components/experience/experience";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
         <AboutMeSectiono />
         <SkillsSection />
         <ProjectSection />
+        <ExperienceSection />
         <ContactSection />
       </section>
       <footer>
