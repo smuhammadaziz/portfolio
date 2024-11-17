@@ -14,7 +14,7 @@ function Header() {
       <div className="container mx-auto px-6 md:px-40 flex justify-between items-center py-4">
         <a
           href="#"
-          className="text-3xl font-bold text-indigo-900 hover:text-indigo-950">
+          className="text-xl lg:text-2xl font-bold text-indigo-900 hover:text-indigo-950">
           Muhammadaziz
         </a>
 
