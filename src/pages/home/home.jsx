@@ -8,6 +8,7 @@ import ContactSection from "../../components/contact/contact";
 import SkillsSection from "../../components/skills/skills";
 import ProjectSection from "../../components/projects/projects";
 import ExperienceSection from "../../components/experience/experience";
+import AchievementsSection from "../../components/achievement/achieve";
 
 function HomePage() {
   return (
@@ -22,6 +23,7 @@ function HomePage() {
         <SkillsSection />
         <ProjectSection />
         <ExperienceSection />
+        <AchievementsSection />
         <ContactSection />
       </section>
       <footer>

@@ -61,11 +61,11 @@ function ExperienceSection() {
   ];
 
   return (
-    <div className="myexperience py-16 bg-gradient-to-b from-slate-100 to-slate-300">
+    <div className="myexperience py-16 bg-slate-100">
       <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Work Experience
       </h2>
-      <div className="container mx-auto px-4 md:px-12">
+      <div className="container mx-auto px-6 md:px-40">
         {experiences.map((experience, index) => (
           <div
             key={index}
