@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import img from "../../assets/a1.jpg";
 
 function AchievementsSection() {
@@ -37,16 +38,28 @@ function AchievementsSection() {
     setSelectedAchievement(null);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Animation duration in ms
+      easing: "ease-in-out", // Animation easing
+      once: false, // Ensure animation is triggered multiple times when scrolling
+    });
+  }, []);
+
   return (
     <div className="py-16 bg-gradient-to-b from-slate-100 to-slate-300">
-      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
+      <h2
+        data-aos="fade-down"
+        className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Achievements
       </h2>
       <div className="container mx-auto px-6 md:px-40 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {achievements.map((achievement) => (
           <div
             key={achievement.id}
-            className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            data-aos="fade-up"
+            data-aos-delay={`${achievement.id * 200}`} // Adding delay for staggered animation
+            className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 hover:shadow-2xl">
             <img
               src={img}
               alt={achievement.title}

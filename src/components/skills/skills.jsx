@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaReact,
   FaNodeJs,
@@ -15,6 +15,8 @@ import {
   SiJavascript,
 } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Modal({ isOpen, skill, onClose }) {
   if (!isOpen) return null;
@@ -26,6 +28,8 @@ function Modal({ isOpen, skill, onClose }) {
       <div
         className="bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-lg"
         onClick={(e) => e.stopPropagation()}>
+        {" "}
+        {/* Prevent modal closing when clicking inside */}
         <h2 className="text-2xl font-bold text-gray-800 mb-4">{skill.name}</h2>
         <div className="flex items-center mb-6">
           {skill.icon}
@@ -49,6 +53,10 @@ function Modal({ isOpen, skill, onClose }) {
 function SkillsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false }); // Initialize AOS with retriggering on scroll
+  }, []);
 
   const skills = [
     {
@@ -160,7 +168,7 @@ function SkillsSection() {
   };
 
   return (
-    <div className="py-20 bg-slate-100">
+    <div className="py-20 bg-slate-100" data-aos="fade-up">
       <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Skills
       </h2>
@@ -169,16 +177,17 @@ function SkillsSection() {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
+              className="flex flex-col items-center bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100} // Adds a staggered effect
+            >
               <div className="flex flex-col items-center mb-6">
                 {skill.icon}
                 <h3 className="text-lg font-semibold text-gray-800">
                   {skill.name}
                 </h3>
-                {/* <p className="text-sm text-gray-600">{skill.description}</p> */}
               </div>
 
-              {/* "More" Button to open Modal */}
               <button
                 onClick={() => handleOpenModal(skill)}
                 className="text-indigo-800 font-semibold border-2 border-indigo-800 rounded-lg px-3 py-1">
@@ -189,7 +198,6 @@ function SkillsSection() {
         </div>
       </div>
 
-      {/* Modal for More Information */}
       <Modal
         isOpen={isModalOpen}
         skill={selectedSkill}

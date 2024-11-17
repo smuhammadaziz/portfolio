@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import mylogo from "../../assets/rasm.png";
 
 function Intro() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Animation occurs only once
+    });
+  }, []);
+
   return (
     <div className="bg-slate-100 py-10 mt-16 flex items-center justify-center">
-      <div className="container px-6 md:px-40 flex flex-col items-center text-center space-y-8">
+      <div
+        className="container px-6 md:px-40 flex flex-col items-center text-center space-y-8"
+        data-aos="fade-up">
         {/* Image Section */}
         <img
           src={mylogo}
           alt="Logo"
           className="w-48 md:w-60 lg:w-72 rounded-full border-4 shadow-lg"
+          data-aos="zoom-in"
         />
 
         {/* Text Section */}
-        <div>
+        <div data-aos="fade-right">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 font-roboto">
             Muhammadaziz Ravshanbekov
           </h1>
@@ -28,7 +40,7 @@ function Intro() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-6 mt-6">
+        <div className="flex space-x-6 mt-6" data-aos="fade-up">
           <a
             href="https://t.me/your-telegram"
             target="_blank"
@@ -53,7 +65,9 @@ function Intro() {
         </div>
 
         {/* Button */}
-        <button className="bg-indigo-900 text-white px-8 md:px-12 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-transparent border-2 border-indigo-900 hover:text-indigo-800 transition transform hover:scale-105 font-roboto">
+        <button
+          className="bg-indigo-900 text-white px-8 md:px-12 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-transparent border-2 border-indigo-900 hover:text-indigo-800 transition transform hover:scale-105 font-roboto"
+          data-aos="flip-up">
           My Experience
         </button>
       </div>

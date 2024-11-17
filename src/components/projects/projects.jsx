@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import project from "../../assets/project.jpg";
 
 function Modal({ isOpen, projectDetails, onClose }) {
@@ -40,6 +42,14 @@ function Modal({ isOpen, projectDetails, onClose }) {
 function ProjectSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: false, // Whether animation should happen only once
+      mirror: true, // Repeat animation on scroll-up
+    });
+  }, []);
 
   const projects = [
     {
@@ -128,7 +138,9 @@ function ProjectSection() {
 
   return (
     <div className="py-20 bg-slate-100">
-      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
+      <h2
+        data-aos="fade-up"
+        className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Projects
       </h2>
       <div className="container mx-auto px-6 md:px-40 text-left">
@@ -136,6 +148,7 @@ function ProjectSection() {
           {projects.map((project, index) => (
             <div
               key={index}
+              data-aos="zoom-in"
               className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
               <img
                 src={project.image}
