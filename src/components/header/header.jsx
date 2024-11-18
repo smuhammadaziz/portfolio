@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
 
+import resume from "../../assets/Muhammadaziz's Resume.pdf";
+
 function Header() {
   const [nav, setNav] = useState(false);
 
@@ -36,10 +38,17 @@ function Header() {
             Achievements
           </li>
           <li className="text-lg text-slate-700 hover:underline cursor-pointer flex items-center">
-            Resume{" "}
-            <span className="ms-2 mt-1">
-              <MdOutlineFileDownload />
-            </span>
+            <a
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="flex items-center">
+              Resume{" "}
+              <span className="ms-2 mt-1">
+                <MdOutlineFileDownload />
+              </span>
+            </a>
           </li>
         </ul>
 
@@ -80,10 +89,17 @@ function Header() {
             <li
               onClick={handleNav}
               className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2 flex">
-              Resume{" "}
-              <span className="ms-2 mt-1">
-                <MdOutlineFileDownload />
-              </span>
+              <a
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="flex items-center">
+                Resume{" "}
+                <span className="ms-2 mt-1">
+                  <MdOutlineFileDownload />
+                </span>
+              </a>
             </li>
             <li
               onClick={handleNav}
