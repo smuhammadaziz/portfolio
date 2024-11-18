@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaRegCheckCircle } from "react-icons/fa"; // Importing icon
 
-function AboutMeSectiono() {
+function AboutMeSection() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -27,30 +28,72 @@ function AboutMeSectiono() {
           <h3
             className="text-lg font-semibold mb-6 text-teal-600"
             data-aos="fade-left">
-            MIT '18, M.Eng. Student, Software Engineer, and AI/ML Researcher
+            Software Engineer with more than 2.5 years of experience
           </h3>
           <p
-            className="text-black text-base max-w-3xl mx-auto text-gray-700"
+            className="text-black text-base max-w-xl mx-auto text-gray-700"
             data-aos="zoom-in">
-            I'm a graduate of MIT's Class of 2018, deeply passionate about
-            Computer Science. My interests include software design and
-            development, artificial intelligence, machine learning, computer
-            vision, and natural language processing.
-          </p>
-          <p
-            className="text-black text-base max-w-3xl mx-auto text-gray-700"
-            data-aos="zoom-in">
-            Currently, I'm pursuing a Master of Engineering (M.Eng.) in Computer
-            Science and Artificial Intelligence.
+            I am passionate about solving real-world problems through technology
+            and creating intuitive, impactful user experiences.
           </p>
 
-          {/* See More Button */}
-          <NavLink
-            to="/about"
-            className="inline-block mt-10 py-3 px-8 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105"
-            data-aos="flip-up">
-            Read More
-          </NavLink>
+          {/* Career and Life Highlights */}
+          <ul className="space-y-4 text-left text-gray-800 max-w-3xl mx-auto">
+            <li
+              className="flex items-start space-x-3"
+              data-aos="fade-up"
+              data-aos-delay="100">
+              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
+              <p>
+                Currently working on building an ERP system using{" "}
+                <strong>React</strong>
+                and <strong>Electron JS</strong>, consolidating data across
+                multiple ecosystems.
+              </p>
+            </li>
+            <li
+              className="flex items-start space-x-3"
+              data-aos="fade-up"
+              data-aos-delay="200">
+              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
+              <p>
+                Experience as a <strong>frontend developer</strong>, CTO, and
+                lead on several successful projects, including a startup online
+                marketplace.
+              </p>
+            </li>
+            <li
+              className="flex items-start space-x-3"
+              data-aos="fade-up"
+              data-aos-delay="300">
+              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
+              <p>
+                Strong background in <strong>software development</strong>{" "}
+                gained through specialized education and hands-on experience.
+              </p>
+            </li>
+            <li
+              className="flex items-start space-x-3"
+              data-aos="fade-up"
+              data-aos-delay="400">
+              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
+              <p>
+                Aspiring to further my education with a{" "}
+                <strong>Master of Engineering (M.Eng.)</strong>
+                in Computer Science and Artificial Intelligence.
+              </p>
+            </li>
+            <li
+              className="flex items-start space-x-3"
+              data-aos="fade-up"
+              data-aos-delay="500">
+              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
+              <p>
+                Deeply interested in <strong>project management</strong>,
+                combining technical expertise with leadership skills.
+              </p>
+            </li>
+          </ul>
         </div>
 
         {/* Decorative Section (Optional: Add a background or pattern) */}
@@ -66,4 +109,4 @@ function AboutMeSectiono() {
   );
 }
 
-export default AboutMeSectiono;
+export default AboutMeSection;

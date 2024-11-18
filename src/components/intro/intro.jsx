@@ -34,7 +34,7 @@ function Intro() {
             Software Engineer @KSB-SOFT
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-500 mt-4 leading-relaxed font-roboto max-w-xl mx-auto">
-            Passionate about building scalable software and elegant user-centric
+            Passionate about building scalable software and perfect user-centric
             experiences. Let’s solve complex problems together!
           </p>
         </div>
@@ -42,21 +42,21 @@ function Intro() {
         {/* Social Media Icons */}
         <div className="flex space-x-6 mt-6" data-aos="fade-up">
           <a
-            href="https://t.me/your-telegram"
+            href="https://t.me/rmuhammadaziz"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
             <FaTelegram size={24} />
           </a>
           <a
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/smuhammadaziz"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
@@ -65,11 +65,12 @@ function Intro() {
         </div>
 
         {/* Button */}
-        <button
+        <a
+          href="#experience"
           className="bg-indigo-900 text-white px-8 md:px-12 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-transparent border-2 border-indigo-900 hover:text-indigo-800 transition transform hover:scale-105 font-roboto"
           data-aos="flip-up">
           My Experience
-        </button>
+        </a>
       </div>
     </div>
   );

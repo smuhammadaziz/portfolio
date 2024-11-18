@@ -18,13 +18,27 @@ function HomePage() {
       </header>
 
       <section>
-        <Intro />
-        <AboutMeSectiono />
-        <SkillsSection />
-        <ProjectSection />
-        <ExperienceSection />
-        <AchievementsSection />
-        <ContactSection />
+        <div id="intro">
+          <Intro />
+        </div>
+        <div id="about">
+          <AboutMeSectiono />
+        </div>
+        <div id="skills">
+          <SkillsSection />
+        </div>
+        <div id="projects">
+          <ProjectSection />
+        </div>
+        <div id="experience">
+          <ExperienceSection />
+        </div>
+        <div id="achieve">
+          <AchievementsSection />
+        </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
       </section>
       <footer>
         <Footer />

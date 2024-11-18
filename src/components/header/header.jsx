@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
 
 import resume from "../../assets/Muhammadaziz's Resume.pdf";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [nav, setNav] = useState(false);
@@ -22,21 +23,31 @@ function Header() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">
+          <a
+            href="#about"
+            className="text-lg text-slate-700 hover:underline cursor-pointer">
             About Me
-          </li>
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">
+          </a>
+          <a
+            href="#skills"
+            className="text-lg text-slate-700 hover:underline cursor-pointer">
             Skills
-          </li>
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">
+          </a>
+          <a
+            href="#projects"
+            className="text-lg text-slate-700 hover:underline cursor-pointer">
             Projects
-          </li>
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">
+          </a>
+          <a
+            href="#experience"
+            className="text-lg text-slate-700 hover:underline cursor-pointer">
             Work Experience
-          </li>
-          <li className="text-lg text-slate-700 hover:underline cursor-pointer">
+          </a>
+          <a
+            href="#achieve"
+            className="text-lg text-slate-700 hover:underline cursor-pointer">
             Achievements
-          </li>
+          </a>
           <li className="text-lg text-slate-700 hover:underline cursor-pointer flex items-center">
             <a
               href={resume}
@@ -52,9 +63,11 @@ function Header() {
           </li>
         </ul>
 
-        <button className="hidden md:block border-2 border-indigo-950 bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2">
+        <a
+          href="#contact"
+          className="hidden md:block border-2 border-indigo-950 bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2">
           Contact
-        </button>
+        </a>
 
         {/* Mobile Hamburger Icon */}
         <div className="md:hidden z-20" onClick={handleNav}>
@@ -71,21 +84,36 @@ function Header() {
             nav ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out z-10`}>
           <ul className="space-y-8 text-center text-2xl mt-10">
-            <li onClick={handleNav} className="hover:underline cursor-pointer">
+            <a
+              href="#about"
+              onClick={handleNav}
+              className="hover:underline cursor-pointer">
               About Me
-            </li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer">
+            </a>
+            <a
+              href="#skills"
+              onClick={handleNav}
+              className="hover:underline cursor-pointer">
               Skills
-            </li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer">
+            </a>
+            <a
+              href="#projects"
+              onClick={handleNav}
+              className="hover:underline cursor-pointer">
               Projects
-            </li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer">
+            </a>
+            <a
+              href="#experience"
+              onClick={handleNav}
+              className="hover:underline cursor-pointer">
               Work Experience
-            </li>
-            <li onClick={handleNav} className="hover:underline cursor-pointer">
+            </a>
+            <a
+              href="#achieve"
+              onClick={handleNav}
+              className="hover:underline cursor-pointer">
               Achievements
-            </li>
+            </a>
             <li
               onClick={handleNav}
               className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2 flex">
@@ -101,11 +129,12 @@ function Header() {
                 </span>
               </a>
             </li>
-            <li
+            <a
+              href="#contact"
               onClick={handleNav}
               className="hover:underline cursor-pointer border-2 border-white bg-indigo-900 hover:bg-white hover:text-indigo-950 text-white rounded-lg px-10 py-2">
               Contact
-            </li>
+            </a>
           </ul>
         </div>
       </div>
