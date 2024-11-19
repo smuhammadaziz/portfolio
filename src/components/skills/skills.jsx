@@ -23,28 +23,27 @@ function Modal({ isOpen, skill, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}>
       <div
-        className="bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-lg"
+        className="bg-white p-6 rounded-lg shadow-xl w-full max-w-md md:max-w-lg"
         onClick={(e) => e.stopPropagation()}>
         {" "}
-        {/* Prevent modal closing when clicking inside */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">{skill.name}</h2>
-        <div className="flex items-center mb-6">
-          {skill.icon}
-          <h3 className="text-lg font-semibold text-gray-800 ml-4">
-            {skill.name}
-          </h3>
+        {/* Prevents closing on content click */}
+        <div className="flex flex-col items-center text-center">
+          <div className="flex items-center space-x-4 mb-4">
+            {skill.icon}
+            <h2 className="text-2xl font-bold text-gray-800">{skill.name}</h2>
+          </div>
+          <p className="text-gray-700 text-sm mb-4">
+            {skill.detailedDescription}
+          </p>
+          <button
+            onClick={onClose}
+            className="mt-4 py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
+            Close
+          </button>
         </div>
-        <p className="text-gray-700 text-sm mb-4">
-          {skill.detailedDescription}
-        </p>
-        <button
-          onClick={onClose}
-          className="mt-4 py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
-          Close
-        </button>
       </div>
     </div>
   );

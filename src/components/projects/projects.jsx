@@ -11,19 +11,24 @@ function Modal({ isOpen, projectDetails, onClose }) {
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
       onClick={onClose}>
       <div
-        className="bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-lg"
+        className="bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-2xl"
         onClick={(e) => e.stopPropagation()}>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          {projectDetails.title}
-        </h2>
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-800 focus:outline-none">
+          ✕
+        </button>
         <div className="flex flex-col items-center mb-6">
           <img
             src={projectDetails.image}
             alt={projectDetails.title}
-            className="w-full h-64 object-cover rounded-md mb-4"
+            className="w-full h-auto max-h-96 object-contain rounded-md mb-4"
           />
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            {projectDetails.title}
+          </h2>
           <p className="text-gray-700 text-sm mb-4">
-            {projectDetails.description}
+            {projectDetails.detailedDescription}
           </p>
           <p className="text-gray-500 text-sm">
             Finished: {projectDetails.finishedDate}
@@ -45,9 +50,9 @@ function ProjectSection() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: false, // Whether animation should happen only once
-      mirror: true, // Repeat animation on scroll-up
+      duration: 1000,
+      once: false,
+      mirror: true,
     });
   }, []);
 

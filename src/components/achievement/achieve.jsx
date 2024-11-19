@@ -8,7 +8,7 @@ function AchievementsSection() {
     {
       id: 1,
       title: "Winner of IT Olympiad",
-      image: "", // Replace with your image URL
+      image: img, // Replace with your image URL
       description:
         "Achieved first place in the national IT Olympiad, demonstrating excellence in problem-solving and programming.",
     },
@@ -61,9 +61,9 @@ function AchievementsSection() {
             data-aos-delay={`${achievement.id * 200}`} // Adding delay for staggered animation
             className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 hover:shadow-2xl">
             <img
-              src={img}
+              src={achievement.image}
               alt={achievement.title}
-              className="w-full h-72 object-cover position-top"
+              className="w-full h-72 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -90,9 +90,9 @@ function AchievementsSection() {
               ✕
             </button>
             <img
-              src={img}
+              src={selectedAchievement.image}
               alt={selectedAchievement.title}
-              className="w-full h-72 object-cover rounded-lg mb-6"
+              className="w-full h-auto max-h-80 object-contain rounded-lg mb-6"
             />
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
               {selectedAchievement.title}
