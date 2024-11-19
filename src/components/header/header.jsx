@@ -14,6 +14,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 md:px-16 flex justify-between items-center py-4">
+        {/* Logo */}
         <a
           href="#"
           className="text-xl lg:text-2xl font-bold text-indigo-900 hover:text-indigo-950">
@@ -69,9 +70,9 @@ function Header() {
         </a>
 
         {/* Mobile Hamburger Icon */}
-        <div className="md:hidden z-20" onClick={handleNav}>
+        <div className="md:hidden z-30" onClick={handleNav}>
           {nav ? (
-            <FaTimes size={25} className="text-indigo-900" />
+            <FaTimes size={25} className="text-white" />
           ) : (
             <FaBars size={25} className="text-indigo-900" />
           )}
@@ -81,8 +82,8 @@ function Header() {
         <div
           className={`fixed top-0 left-0 w-full h-screen bg-indigo-900 text-white flex flex-col items-center justify-center transform ${
             nav ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out z-10`}>
-          <ul className="space-y-8 text-center text-xl">
+          } transition-transform duration-300 ease-in-out z-20`}>
+          <ul className="space-y-8 text-center text-xl flex flex-col items-center justify-center">
             <a
               href="#about"
               onClick={handleNav}
