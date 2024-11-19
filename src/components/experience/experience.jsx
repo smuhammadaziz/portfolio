@@ -1,18 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaBriefcase, FaCalendarAlt, FaTasks } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function ExperienceSection() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200, // Animation duration in ms
-      easing: "ease-in-out", // Animation easing
-      once: false, // Make animations trigger every time the section comes into view
-      mirror: false, // No repeat on scroll back
-    });
-  }, []);
-
   const experiences = [
     {
       title: "CTO & Middle Frontend Developer",
@@ -24,7 +13,6 @@ function ExperienceSection() {
         "Collaborated with cross-functional teams to ensure timely delivery of project milestones.",
         "Optimized code for performance and user experience.",
       ],
-      aosEffect: "fade-right", // Unique animation
     },
     {
       title: "Frontend Developer",
@@ -36,7 +24,6 @@ function ExperienceSection() {
         "Integrated backend APIs with dynamic UI components.",
         "Worked closely with stakeholders to refine requirements and deliver solutions.",
       ],
-      aosEffect: "fade-left",
     },
     {
       title: "Frontend Developer",
@@ -48,7 +35,6 @@ function ExperienceSection() {
         "Implemented feature-rich dashboards to streamline operations.",
         "Ensured seamless user experiences by resolving critical bugs.",
       ],
-      aosEffect: "zoom-in",
     },
     {
       title: "Software Developer (Intern)",
@@ -60,7 +46,6 @@ function ExperienceSection() {
         "Contributed to team projects and enhanced coding skills.",
         "Gained hands-on experience in both frontend and backend development.",
       ],
-      aosEffect: "flip-right",
     },
     {
       title: "IT Olympiad Competitor",
@@ -72,23 +57,18 @@ function ExperienceSection() {
         "Enhanced problem-solving skills through challenging tasks.",
         "Laid the foundation for a successful software development career.",
       ],
-      aosEffect: "fade-up",
     },
   ];
 
   return (
     <div className="myexperience py-16 bg-slate-100">
-      <h2
-        data-aos="fade-down"
-        className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
+      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Work Experience
       </h2>
       <div className="container mx-auto px-6 md:px-40">
         {experiences.map((experience, index) => (
           <div
             key={index}
-            data-aos={experience.aosEffect}
-            data-aos-delay={`${index * 100}`} // Delay effect based on index
             className="flex flex-col md:flex-row items-start bg-white shadow-lg rounded-lg p-6 mb-8 hover:shadow-2xl transition-shadow duration-300">
             {/* Icon */}
             <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center mb-4 md:mb-0 md:mr-6">

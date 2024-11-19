@@ -9,19 +9,13 @@ import {
   FaTelegram,
   FaGithub,
 } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function ContactSection() {
-  React.useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   return (
     <div className="bg-indigo-950 py-20 text-white font-inter">
       <div className="container mx-auto px-6 md:px-20 lg:px-40 flex flex-col lg:flex-row items-start text-center lg:text-left">
         {/* Left Section: Information */}
-        <div className="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+        <div className="lg:w-1/2 mb-12 lg:mb-0">
           <h2 className="text-4xl font-bold mb-6 text-gray-100">
             Get in Touch
           </h2>
@@ -62,7 +56,7 @@ function ContactSection() {
         </div>
 
         {/* Right Section: Form */}
-        <div className="lg:w-1/2 w-full" data-aos="fade-left">
+        <div className="lg:w-1/2 w-full">
           <form className="w-full bg-gray-900 p-8 rounded-xl shadow-lg">
             <div className="mb-6">
               <label
