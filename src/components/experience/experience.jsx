@@ -7,6 +7,20 @@ function ExperienceSection() {
       year: "2024",
       details: [
         {
+          title: "Full-Stack Developer",
+          company: "KSB-ERP ECOSYSTEM",
+          startDate: "11/2024",
+          endDate: "Present",
+          responsibilities: [
+            "A desktop application is being developed using Electron.js, which will contain many ERP system functions.",
+            "Developed a robust ERP system consolidating data from three 1C ecosystems.",
+            "Enabled offline functionality with local database synchronization to a central system.",
+            "Used React, Electron JS, and Tailwind CSS for a seamless and efficient user interface.",
+            "Implemented real-time updates and streamlined workflows for enhanced productivity.",
+            "Developed a robust ERP system consolidating data from three 1C ecosystems.",
+          ],
+        },
+        {
           title: "Front-End Developer and CTO",
           company: "Educore Online Learning Platform",
           startDate: "03/2024",
