@@ -25,15 +25,14 @@ function AboutMeSection() {
               <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
               <p>
                 Currently working on building an ERP system using{" "}
-                <strong>React</strong>
-                and <strong>Electron JS</strong>, consolidating data across
-                multiple ecosystems.
+                <strong>React</strong> and <strong>Electron JS</strong>,
+                consolidating data across multiple ecosystems.
               </p>
             </li>
             <li className="flex items-start space-x-3">
               <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
               <p>
-                Experience as a <strong>frontend developer</strong>, CTO, and
+                Experienced as a <strong>frontend developer</strong>, CTO, and
                 lead on several successful projects, including a startup online
                 marketplace.
               </p>
@@ -41,16 +40,8 @@ function AboutMeSection() {
             <li className="flex items-start space-x-3">
               <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
               <p>
-                Strong background in <strong>software development</strong>{" "}
+                Strong background in <strong>Software Development</strong>{" "}
                 gained through specialized education and hands-on experience.
-              </p>
-            </li>
-            <li className="flex items-start space-x-3">
-              <FaRegCheckCircle className="text-teal-600 text-xl mt-1" />
-              <p>
-                Aspiring to further my education with a{" "}
-                <strong>Master of Engineering (M.Eng.)</strong>
-                in Computer Science and Artificial Intelligence.
               </p>
             </li>
             <li className="flex items-start space-x-3">

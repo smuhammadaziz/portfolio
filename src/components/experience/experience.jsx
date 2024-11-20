@@ -4,58 +4,83 @@ import { FaBriefcase, FaCalendarAlt, FaTasks } from "react-icons/fa";
 function ExperienceSection() {
   const experiences = [
     {
-      title: "CTO & Middle Frontend Developer",
-      company: "Startup Online Building Materials Marketplace",
-      startDate: "2023",
-      endDate: "2024",
-      responsibilities: [
-        "Led the frontend development team to build scalable web applications.",
-        "Collaborated with cross-functional teams to ensure timely delivery of project milestones.",
-        "Optimized code for performance and user experience.",
+      year: "2024",
+      details: [
+        {
+          title: "Front-End Developer and CTO",
+          company: "Educore Online Learning Platform",
+          startDate: "03/2024",
+          endDate: "08/2024",
+          responsibilities: [
+            "Collaborated closely with designers and other developers to complete tasks efficiently.",
+            "Built responsive web pages optimized for different devices.",
+            "Implemented best practices for SEO optimization of website pages and contents.",
+            "Developed a main website including 3 types of dashboards functioning as a CRM system.",
+            "Assisted in debugging application issues related to back-end systems.",
+            "Implemented RESTful web services and deployed the application on the Plesk Server.",
+          ],
+        },
+        {
+          title: "Python Full Stack Developer",
+          company: "Start Up Project",
+          startDate: "01/2023",
+          endDate: "08/2024",
+          responsibilities: [
+            "Developed a Telegram bot using Python and Aiogram framework, integrated with PostgreSQL.",
+            "Independently learned Python and Aiogram, starting from scratch.",
+            "Implemented clean code principles and continuously optimized bot functionalities.",
+          ],
+        },
       ],
     },
     {
-      title: "Frontend Developer",
-      company: "Kindergarten CRM System",
-      startDate: "2022",
-      endDate: "2023",
-      responsibilities: [
-        "Developed user-friendly interfaces for the CRM platform.",
-        "Integrated backend APIs with dynamic UI components.",
-        "Worked closely with stakeholders to refine requirements and deliver solutions.",
+      year: "2023",
+      details: [
+        {
+          title: "Full Stack Web Developer and Team Lead",
+          company: "Startup Project",
+          startDate: "02/2023",
+          endDate: "02/2024",
+          responsibilities: [
+            "Built the website for the 182nd school in Tashkent and handed it over successfully.",
+            "Managed both back-end and front-end development processes.",
+            "Utilized React for dynamic and interactive web applications.",
+            "Built and integrated RESTful APIs for internal and external use.",
+            "Deployed projects on the Plesk server.",
+          ],
+        },
       ],
     },
     {
-      title: "Frontend Developer",
-      company: "Learning Center CRM System",
-      startDate: "2021",
-      endDate: "2022",
-      responsibilities: [
-        "Designed responsive layouts with optimized workflows for educators.",
-        "Implemented feature-rich dashboards to streamline operations.",
-        "Ensured seamless user experiences by resolving critical bugs.",
+      year: "2022",
+      details: [
+        {
+          title: "Front-End Developer",
+          company: "Start Up Company",
+          startDate: "09/2022",
+          endDate: "12/2022",
+          responsibilities: [
+            "Created custom responsive designs optimized for various devices.",
+            "Integrated front-end code with server-side logic for dynamic pages.",
+            "Collaborated with back-end developers to integrate UI elements.",
+          ],
+        },
       ],
     },
     {
-      title: "Software Developer (Intern)",
-      company: "Najot Ta'lim IT Learning Center",
-      startDate: "2020",
-      endDate: "2020",
-      responsibilities: [
-        "Participated in a full-stack software engineering bootcamp.",
-        "Contributed to team projects and enhanced coding skills.",
-        "Gained hands-on experience in both frontend and backend development.",
-      ],
-    },
-    {
-      title: "IT Olympiad Competitor",
-      company: "Presidential School, Tashkent",
-      startDate: "2018",
-      endDate: "2020",
-      responsibilities: [
-        "Competed in school-level IT Olympiads, achieving significant results.",
-        "Enhanced problem-solving skills through challenging tasks.",
-        "Laid the foundation for a successful software development career.",
+      year: "2021",
+      details: [
+        {
+          title: "FrontEnd Developer",
+          company: "Dynamic Soft",
+          startDate: "11/2021",
+          endDate: "02/2022",
+          responsibilities: [
+            "Developed and maintained user-friendly webpages using React (Next.js).",
+            "Collaborated with teammates to improve development processes.",
+            "Integrated user interface elements with back-end logic.",
+          ],
+        },
       ],
     },
   ];
@@ -66,37 +91,41 @@ function ExperienceSection() {
         My Work Experience
       </h2>
       <div className="container mx-auto px-6 md:px-40">
-        {experiences.map((experience, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row items-start bg-white shadow-lg rounded-lg p-6 mb-8 hover:shadow-2xl transition-shadow duration-300">
-            {/* Icon */}
-            <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center mb-4 md:mb-0 md:mr-6">
-              <FaBriefcase className="text-2xl" />
-            </div>
-            {/* Content */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                {experience.title}
-              </h3>
-              <p className="text-lg font-medium text-gray-600">
-                {experience.company}
-              </p>
-              <div className="flex items-center text-gray-500 text-sm mt-2">
-                <FaCalendarAlt className="mr-2" />
-                <span>
-                  {experience.startDate} - {experience.endDate}
-                </span>
+        {experiences.map((yearlyExperience, index) => (
+          <div key={index} className="mb-12">
+            {yearlyExperience.details.map((experience, expIndex) => (
+              <div
+                key={expIndex}
+                className="flex flex-col md:flex-row items-start bg-white shadow-lg rounded-lg p-6 mb-8 hover:shadow-2xl transition-shadow duration-300">
+                {/* Icon */}
+                <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                  <FaBriefcase className="text-2xl" />
+                </div>
+                {/* Content */}
+                <div>
+                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+                    {experience.title}
+                  </h4>
+                  <p className="text-lg font-medium text-gray-600">
+                    {experience.company}
+                  </p>
+                  <div className="flex items-center text-gray-500 text-sm mt-2">
+                    <FaCalendarAlt className="mr-2" />
+                    <span>
+                      {experience.startDate} - {experience.endDate}
+                    </span>
+                  </div>
+                  <ul className="mt-4 list-disc list-inside text-gray-700 space-y-2">
+                    {experience.responsibilities.map((task, taskIndex) => (
+                      <li key={taskIndex} className="flex items-start">
+                        <FaTasks className="text-indigo-500 mr-2 mt-1" />
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <ul className="mt-4 list-disc list-inside text-gray-700 space-y-2">
-                {experience.responsibilities.map((task, taskIndex) => (
-                  <li key={taskIndex} className="flex items-start">
-                    <FaTasks className="text-indigo-500 mr-2 mt-1" />
-                    <span>{task}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         ))}
       </div>

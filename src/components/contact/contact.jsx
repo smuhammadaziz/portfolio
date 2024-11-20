@@ -40,18 +40,27 @@ function ContactSection() {
                 029-10-80
               </p>
             </div>
-            <button className="flex items-center gap-3 bg-slate-100 px-10 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
+            <a
+              href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
+              target="_blank"
+              className="flex items-center gap-3 bg-slate-100 px-10 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
               <FaLinkedin className="text-2xl text-blue-500" />
               <p className="text-lg">Linkedin</p>
-            </button>
-            <button className="flex items-center gap-3 bg-slate-100 px-9 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
+            </a>
+            <a
+              href="https://t.me/rmuhammadaziz"
+              target="_blank"
+              className="flex items-center gap-3 bg-slate-100 px-9 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
               <FaTelegram className="text-2xl text-blue-500" />
               <p className="text-lg">Telegram</p>
-            </button>
-            <button className="flex items-center gap-3 bg-slate-100 px-12 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
+            </a>
+            <a
+              href="https://github.com/smuhammadaziz"
+              target="_blank"
+              className="flex items-center gap-3 bg-slate-100 px-12 py-3 rounded-lg text-black hover:bg-transparent border-2 border-slate-100 hover:text-white">
               <FaGithub className="text-2xl text-blue-500" />
               <p className="text-lg">Github</p>
-            </button>
+            </a>
           </div>
         </div>
 

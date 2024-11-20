@@ -1,28 +1,33 @@
 import React, { useState } from "react";
 import img from "../../assets/a1.jpg";
+import img1 from "../../assets/a2.jpg";
+import img2 from "../../assets/a3.jpg";
 
 function AchievementsSection() {
   const achievements = [
     {
       id: 1,
-      title: "Winner of IT Olympiad",
-      image: img, // Replace with your image URL
+      title: "Mohirdev22 Hackaton, 3rd place",
+      image: img,
       description:
-        "Achieved first place in the national IT Olympiad, demonstrating excellence in problem-solving and programming.",
+        "Achieved 3rd place related to education sphere, demonstrating one project which connect low-income families and supportive people. My platform able to connect them easily and getting help for them.",
+      date: "12 December 2022",
     },
     {
       id: 2,
-      title: "Top Graduate of Presidential School",
-      image: "https://via.placeholder.com/300", // Replace with your image URL
+      title: "Full-Stack Development Course Certification",
+      image: img2,
       description:
-        "Graduated as the top student from the Presidential School, recognized for academic excellence and leadership qualities.",
+        "Finished Full-Stack Development Course and gained much more experience within 1 year.",
+      date: "2 February 2022",
     },
     {
       id: 3,
-      title: "Full-Stack Developer Certification",
-      image: "https://via.placeholder.com/300", // Replace with your image URL
+      title: "IT-School Hackaton, 2nd place",
+      image: img1,
       description:
-        "Earned a full-stack developer certification after completing an intensive program at Najot Ta'lim IT Learning Center.",
+        "Created one CRM ecosystem which helps people to communicate with their colleagues with online mode and sharing ideas with them.",
+      date: "1 April 2023",
     },
   ];
 
@@ -45,20 +50,22 @@ function AchievementsSection() {
         {achievements.map((achievement) => (
           <div
             key={achievement.id}
-            className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 hover:shadow-2xl">
+            className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 hover:shadow-2xl">
             <img
               src={achievement.image}
               alt={achievement.title}
               className="w-full h-72 object-cover"
             />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                {achievement.title}
-              </h3>
-              <h3 className="text-xl text-gray-800 mb-4">20.12.2024</h3>
+            <div className="flex flex-col justify-between flex-1 p-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  {achievement.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{achievement.date}</p>
+              </div>
               <button
                 onClick={() => handleReadMore(achievement)}
-                className="py-2 px-4 bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-600 transition-colors">
+                className="mt-auto py-2 px-4 bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-600 transition-colors">
                 Read More
               </button>
             </div>

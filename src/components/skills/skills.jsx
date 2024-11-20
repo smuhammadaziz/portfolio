@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaGitAlt,
   FaDocker,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -82,6 +83,14 @@ function SkillsSection() {
         "I use JavaScript for full-stack development, utilizing libraries and frameworks like React for the frontend and Node.js for backend development.",
     },
     {
+      name: "Python",
+      icon: <FaPython size={50} className="text-yellow-500 mb-4" />,
+      description:
+        "Python was used for creating API and connecting to the database with external clouds",
+      detailedDescription:
+        "I use Python for full-stack development, utilizing libraries and frameworks like Aiogram and Django, to making interactive telegram bot.",
+    },
+    {
       name: "HTML5",
       icon: <FaHtml5 size={50} className="text-orange-500 mb-4" />,
       description:
@@ -122,28 +131,12 @@ function SkillsSection() {
         "GitHub is crucial for hosting my code repositories, collaborating on open-source projects, and using CI/CD pipelines for seamless development.",
     },
     {
-      name: "MySQL",
-      icon: <DiMysql size={50} className="text-blue-600 mb-4" />,
-      description:
-        "Relational database management. I use MySQL to store and manage data for web applications, ensuring efficient data querying.",
-      detailedDescription:
-        "MySQL is my go-to database for relational data storage, where I utilize advanced querying techniques to optimize database performance.",
-    },
-    {
       name: "PostgreSQL",
       icon: <SiPostgresql size={50} className="text-green-700 mb-4" />,
       description:
         "Advanced relational database. I use PostgreSQL for data storage and management in scalable applications.",
       detailedDescription:
         "PostgreSQL is ideal for handling large-scale applications with complex queries, offering advanced features like JSON support and data integrity.",
-    },
-    {
-      name: "Docker",
-      icon: <FaDocker size={50} className="text-blue-500 mb-4" />,
-      description:
-        "Containerization tool. I use Docker to ensure consistent application environments across development, testing, and production.",
-      detailedDescription:
-        "Docker helps me containerize applications, ensuring that they run consistently across different environments, easing deployment and scaling.",
     },
     {
       name: "Electron",
@@ -166,7 +159,7 @@ function SkillsSection() {
   };
 
   return (
-    <div className="py-20 bg-slate-100">
+    <div className="py-10 bg-slate-100">
       <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
         My Skills
       </h2>

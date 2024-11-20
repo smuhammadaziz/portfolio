@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import project from "../../assets/project.jpg";
+import project1 from "../../assets/project1.jpg";
+import project2 from "../../assets/project2.jpg";
+import project3 from "../../assets/project3.jpg";
+import project4 from "../../assets/project4.jpg";
+import project5 from "../../assets/project5.jpg";
+import project6 from "../../assets/project6.jpg";
 
 function Modal({ isOpen, projectDetails, onClose }) {
   if (!isOpen) return null;
@@ -31,6 +37,15 @@ function Modal({ isOpen, projectDetails, onClose }) {
           <p className="text-gray-500 text-sm">
             Finished: {projectDetails.finishedDate}
           </p>
+          {projectDetails.link && (
+            <a
+              href={projectDetails.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 text-blue-500 hover:underline">
+              Visit Project
+            </a>
+          )}
         </div>
         <button
           onClick={onClose}
@@ -48,76 +63,53 @@ function ProjectSection() {
 
   const projects = [
     {
-      title: "E-commerce Web Platform",
-      image: project,
+      title: "KSB-ERP ECOSYSTEM",
+      image: project6,
       description:
-        "Developed a fully functional e-commerce platform, including product management, payment integration, and user authentication using React and Node.js.",
-      finishedDate: "2023-12-01",
+        "I am currently working on this desktop app and this project is about ERP ECOSYSTEM, which helps people to managing enterprise.",
+      finishedDate: "In process...",
       detailedDescription:
-        "Created an e-commerce website with custom product management, shopping cart, and integrated payment gateways like Stripe, optimized for mobile and desktop.",
+        "I am currently working on this project and this project is about ERP ECOSYSTEM, which helps people to managing enterprise.",
+      link: null,
     },
     {
-      title: "Employee Management System",
+      title: "Educore Online Learning Platform",
       image: project,
-      description:
-        "Built a robust employee management system to streamline HR processes including attendance tracking, payroll, and performance reviews using React and PostgreSQL.",
-      finishedDate: "2024-01-15",
+      description: "Build",
+      finishedDate: "15 August 2024",
       detailedDescription:
-        "Developed an employee management system to help businesses manage employee data, automate payroll calculations, and generate performance reports, using PostgreSQL for data storage.",
+        "Developed Online Learning Platform, which makes students able to learn IELTS, SAT, IGCSE and A-LEVEL courses with well-qualified teachers. Making fully-functional CRM system.",
+      link: "https://edu-front-lovat.vercel.app/",
     },
     {
-      title: "Inventory Management System",
-      image: project,
+      title: "Osonku.uz",
+      image: project4,
       description:
         "Designed an inventory management system with real-time updates, barcode scanning, and reporting functionalities. Utilized Electron for cross-platform desktop app development.",
-      finishedDate: "2024-02-28",
+      finishedDate: "In process...",
       detailedDescription:
-        "Built a comprehensive inventory system that integrates barcode scanning and automatic stock level updates, improving supply chain management for small businesses.",
+        "It is the largest Telegram bot in Uzbekistan, where users from all regions can sell or buy their houses.",
+      link: "https://t.me/osonkuBot",
     },
     {
-      title: "Personal Finance Management App",
-      image: project,
+      title: "182maktab.uz",
+      image: project2,
       description:
         "Developed a mobile app that helps users track their expenses, categorize them, and set budgets. Integrated with external APIs for real-time exchange rates.",
-      finishedDate: "2024-03-15",
+      finishedDate: "10 September 2024",
       detailedDescription:
-        "Built an intuitive mobile app that allows users to track daily expenses, categorize spending, and set financial goals, using React Native for cross-platform support.",
+        "My team and I have created the site of my school, we have given it a beautiful design and a great look using React, TailwindCss and Node.js.",
+      link: "http://182maktab.uz/",
     },
     {
-      title: "Customer Support Ticketing System",
-      image: project,
+      title: "yuniygeniy.uz",
+      image: project3,
       description:
         "Created a ticketing system for customer support, including real-time notifications, priority tagging, and customer feedback collection.",
       finishedDate: "2024-04-01",
       detailedDescription:
-        "Developed a ticketing system to streamline customer support, with features such as real-time status updates, priority handling, and user feedback collection using Node.js and Express.",
-    },
-    {
-      title: "Online Learning Platform",
-      image: project,
-      description:
-        "Built an online learning platform with user authentication, course management, and a grading system using React and MongoDB for data storage.",
-      finishedDate: "2024-05-01",
-      detailedDescription:
-        "Created an online platform for students and instructors to interact, offering video lessons, quizzes, and certificate generation. Integrated MongoDB for flexible data storage.",
-    },
-    {
-      title: "Real-Time Chat Application",
-      image: project,
-      description:
-        "Developed a real-time chat application with multiple chat rooms, private messaging, and notifications using WebSockets and Node.js.",
-      finishedDate: "2024-06-01",
-      detailedDescription:
-        "Built a real-time chat app that supports multiple rooms, private chats, and notifications. Used WebSockets for low-latency communication, enabling seamless real-time interactions.",
-    },
-    {
-      title: "Task Management Tool",
-      image: project,
-      description:
-        "Designed a task management tool for teams to track project progress, assign tasks, and manage deadlines. Integrated with GitHub for version control tracking.",
-      finishedDate: "2024-07-01",
-      detailedDescription:
-        "Developed a task management tool that integrates with GitHub to track commit history alongside project progress, enabling developers to stay organized and aligned with deadlines.",
+        "This site is mainly a kindergarten introduction site, where all the information about the kindergarten is located",
+      link: "http://yuniygeniy.uz/",
     },
   ];
 
@@ -150,9 +142,6 @@ function ProjectSection() {
               <h3 className="text-xl font-semibold text-gray-800 my-1">
                 {project.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {project.description}
-              </p>
               <p className="text-gray-500 text-sm">
                 Finished on: {project.finishedDate}
               </p>
