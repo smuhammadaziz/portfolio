@@ -16,15 +16,22 @@ import {
   SiJavascript,
 } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
+import { motion } from "framer-motion";
 
 function Modal({ isOpen, skill, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto"
       onClick={onClose}>
-      <div
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
         className="bg-white p-6 rounded-lg shadow-xl w-full max-w-xs sm:max-w-md md:max-w-lg relative"
         onClick={(e) => e.stopPropagation()}>
         <button
@@ -48,8 +55,8 @@ function Modal({ isOpen, skill, onClose }) {
             Close
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -164,11 +171,24 @@ function SkillsSection() {
         My Skills
       </h2>
       <div className="container mx-auto px-4 sm:px-6 md:px-40 text-center">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+            },
+          }}>
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col items-center bg-white p-4 sm:p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
+              className="flex flex-col items-center bg-white p-4 sm:p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}>
               <div className="flex flex-col items-center mb-4 sm:mb-6">
                 {skill.icon}
                 <h3 className="text-base sm:text-lg font-semibold text-gray-800">
@@ -181,9 +201,9 @@ function SkillsSection() {
                 className="text-indigo-800 font-semibold border-2 border-indigo-800 rounded-lg px-2 py-1 text-sm">
                 More
               </button>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <Modal
