@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img from "../../assets/a1.jpg";
 import img1 from "../../assets/a2.jpg";
 import img2 from "../../assets/a3.jpg";
+import img3 from "../../assets/a4.jpg";
 import s1 from "../../assets/s1.jpg";
 import s2 from "../../assets/s2.jpg";
 import s3 from "../../assets/s3.jpg";
@@ -21,7 +22,7 @@ function AchievementsSection() {
     {
       id: 2,
       title: "Full-Stack Development Course Certification",
-      images: [img2],
+      images: [img2, img3],
       description:
         "Finished Full-Stack Development Course and gained much more experience within 1 year.",
       date: "2 February 2022",
