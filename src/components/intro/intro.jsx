@@ -35,7 +35,6 @@ function Intro() {
             experiences. Let's solve complex problems together!
           </p>
         </motion.div>
-        {/* Social Media Icons */}
         <motion.div
           className="flex space-x-6 mt-6"
           initial={{ opacity: 0 }}
