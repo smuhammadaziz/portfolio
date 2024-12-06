@@ -78,7 +78,7 @@ function Intro() {
             className="text-center relative z-100 lg:text-left lg:w-1/2 lg:order-1 flex flex-col items-center lg:items-start">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900">
-                Hi, I'm Muhammadaziz
+                Ravshanbekov Muhammadaziz
               </span>
             </h1>
 
