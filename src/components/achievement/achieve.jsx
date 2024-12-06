@@ -84,7 +84,7 @@ function AchievementsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-16">
-          My Achievements
+          Achievements
         </motion.h2>
 
         <motion.div
@@ -110,7 +110,7 @@ function AchievementsSection() {
               whileHover={{ y: -5 }}
               className="group relative bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-white to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={achievement.images[0]}
@@ -170,7 +170,9 @@ function AchievementsSection() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.2 }}
                       src={selectedAchievement.images[currentImageIndex]}
-                      alt={`${selectedAchievement.title} Image ${currentImageIndex + 1}`}
+                      alt={`${selectedAchievement.title} Image ${
+                        currentImageIndex + 1
+                      }`}
                       className="w-full object-contain max-h-[300px] mx-auto"
                     />
 
@@ -184,25 +186,34 @@ function AchievementsSection() {
                               ? "bg-gray-300 cursor-not-allowed"
                               : "bg-white/90 hover:bg-white shadow-lg"
                           } transition-all duration-200`}>
-                          <IoArrowBack className={`w-6 h-6 ${
-                            currentImageIndex === 0
-                              ? "text-gray-400"
-                              : "text-gray-700"
-                          }`} />
+                          <IoArrowBack
+                            className={`w-6 h-6 ${
+                              currentImageIndex === 0
+                                ? "text-gray-400"
+                                : "text-gray-700"
+                            }`}
+                          />
                         </button>
                         <button
                           onClick={nextImage}
-                          disabled={currentImageIndex === selectedAchievement.images.length - 1}
+                          disabled={
+                            currentImageIndex ===
+                            selectedAchievement.images.length - 1
+                          }
                           className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full ${
-                            currentImageIndex === selectedAchievement.images.length - 1
+                            currentImageIndex ===
+                            selectedAchievement.images.length - 1
                               ? "bg-gray-300 cursor-not-allowed"
                               : "bg-white/90 hover:bg-white shadow-lg"
                           } transition-all duration-200`}>
-                          <IoArrowForward className={`w-6 h-6 ${
-                            currentImageIndex === selectedAchievement.images.length - 1
-                              ? "text-gray-400"
-                              : "text-gray-700"
-                          }`} />
+                          <IoArrowForward
+                            className={`w-6 h-6 ${
+                              currentImageIndex ===
+                              selectedAchievement.images.length - 1
+                                ? "text-gray-400"
+                                : "text-gray-700"
+                            }`}
+                          />
                         </button>
                       </>
                     )}
