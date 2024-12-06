@@ -16,12 +16,13 @@ function AboutSection() {
       "2.5+ years in Software Development, Currently working on building an ERP system using React and Electron JS, consolidating data across multiple ecosystems. Strong background in Software Development gained through specialized education and hands-on experience.",
     skills: [
       "React/Next.js",
+      "Electron.js",
       "Node.js",
       "Python",
       "TypeScript",
       "PostgreSQL",
       "AWS",
-      "Docker",
+      "Azure",
       "Git",
     ],
     interests: [
@@ -44,16 +45,16 @@ function AboutSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto">
+          <div className="text-center py-6 pt-10">
+            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-4">
+              About Me
+            </h2>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-            <div className="text-center py-6">
-              <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-4">
-                About Me
-              </h2>
-            </div>
             {/* Card Header */}
             <div className="p-8 border-b border-gray-100">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
