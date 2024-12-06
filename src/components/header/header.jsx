@@ -12,7 +12,7 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-[999]">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-[800]">
       <div className="container mx-auto px-6 md:px-40 flex justify-between items-center py-4">
         {/* Logo */}
         <a
