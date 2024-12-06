@@ -54,7 +54,6 @@ function Intro() {
 
       <div className="container mx-auto px-6 md:px-40 relative z-50">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
