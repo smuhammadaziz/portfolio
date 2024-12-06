@@ -48,7 +48,6 @@ function Intro() {
         ))}
       </div>
 
-      {/* Background Elements */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white to-indigo-50 opacity-70" />
       <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-[0.1]" />
 
@@ -87,7 +86,7 @@ function Intro() {
                   2000,
                   "Desktop Engineer",
                   2000,
-                  "Python Telegram Bot Developer",
+                  "Python Developer",
                   2500,
                 ]}
                 wrapper="span"
