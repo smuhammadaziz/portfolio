@@ -1,78 +1,129 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import { motion } from "framer-motion";
-import mylogo from "../../assets/rasm.png";
+import { TypeAnimation } from "react-type-animation";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
+import me from "../../assets/rasm.png";
 
 function Intro() {
+  const socialLinks = [
+    {
+      Icon: FaGithub,
+      href: "https://github.com/smuhammadaziz",
+      color: "hover:text-gray-700",
+    },
+    {
+      Icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/muhammadaziz-ravshanbekov/",
+      color: "hover:text-blue-600",
+    },
+    {
+      Icon: FaTelegram,
+      href: "https://t.me/rmuhammadaziz",
+      color: "hover:text-blue-500",
+    },
+  ];
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="bg-slate-100 py-10 mt-12 lg:mt-16 flex items-center justify-center">
-      <div className="container px-6 md:px-40 flex flex-col items-center text-center space-y-8">
-        {/* Image Section */}
-        <motion.img
-          src={mylogo}
-          alt="Logo"
-          className="w-48 md:w-60 lg:w-72 rounded-full border-4 shadow-lg"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        />
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 font-roboto">
-            Muhammadaziz Ravshanbekov
-          </h1>
-          <h2 className="text-lg md:text-xl lg:text-2xl text-gray-600 mt-2 font-roboto">
-            Software Engineer @KSB-SOFT
-          </h2>
-          <p className="text-base md:text-lg lg:text-xl text-gray-500 mt-4 leading-relaxed font-roboto max-w-xl mx-auto">
-            Passionate about building scalable software and perfect user-centric
-            experiences. Let's solve complex problems together!
-          </p>
-        </motion.div>
-        <motion.div
-          className="flex space-x-6 mt-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}>
-          <a
-            href="https://t.me/rmuhammadaziz"
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24">
+      {/* Background Social Links */}
+      <div className="absolute top-4 right-4 z-10 flex space-x-4">
+        {socialLinks.map(({ Icon, href, color }, index) => (
+          <motion.a
+            key={href}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
-            <FaTelegram size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
-            <FaLinkedin size={24} />
-          </a>
-          <a
-            href="https://github.com/smuhammadaziz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-indigo-900 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-110">
-            <FaGithub size={24} />
-          </a>
-        </motion.div>
-        {/* Button */}
-        <motion.a
-          href="#experience"
-          className="bg-indigo-900 text-white px-8 md:px-12 py-3 rounded-full text-lg md:text-xl shadow-lg hover:bg-transparent border-2 border-indigo-900 hover:text-indigo-800 transition transform hover:scale-105 font-roboto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}>
-          My Experience
-        </motion.a>
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className={`text-gray-500 ${color} transition-all duration-300 ease-in-out hover:scale-110 shadow-md hover:shadow-lg rounded-lg p-2`}>
+            <Icon className="w-6 h-6" />
+          </motion.a>
+        ))}
       </div>
-    </motion.div>
+
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white to-indigo-50 opacity-70" />
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-[0.1]" />
+
+      <div className="container mx-auto px-6 md:px-40 relative z-50">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative z-100 lg:order-2 lg:w-1/2 flex justify-center">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 mx-auto">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 blur-3xl opacity-30 animate-pulse" />
+              <img
+                src={me}
+                alt="Muhammadaziz"
+                className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
+              />
+            </div>
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center relative z-100 lg:text-left lg:w-1/2 lg:order-1 flex flex-col items-center lg:items-start">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900">
+                Hi, I'm Muhammadaziz
+              </span>
+            </h1>
+
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-8 h-[60px] flex items-center">
+              <TypeAnimation
+                sequence={[
+                  "FullStack Web/Desktop Developer",
+                  2000,
+                  "Desktop Engineer",
+                  2000,
+                  "Python Telegram Bot Developer",
+                  2500,
+                ]}
+                wrapper="span"
+                cursor={true}
+                repeat={Infinity}
+                style={{ display: "inline-block" }}
+              />
+            </div>
+
+            <p className="text-gray-700 mb-8 max-w-2xl text-center lg:text-left">
+              I'm a passionate developer focused on creating beautiful and
+              functional web applications. I love turning complex problems into
+              simple, beautiful, and intuitive solutions.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex justify-center lg:justify-start space-x-6">
+              {socialLinks.map(({ Icon, href, color }) => (
+                <motion.a
+                  key={href}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}>
+                  <Icon className="w-8 h-8" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }
 
