@@ -33,7 +33,7 @@ const Modal = ({ isOpen, skill, onClose }) => {
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          transition={{ type: "spring", duration: 0.5 }}
+          transition={{ type: "spring", duration: 0.2 }}
           onClick={(e) => e.stopPropagation()}
           className="relative w-full max-w-lg bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-6 border border-white/20">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white rounded-2xl opacity-90 z-0" />
@@ -102,7 +102,7 @@ const SkillCard = ({ skill, onClick }) => {
           <button
             onClick={onClick}
             className="mt-4 px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white text-sm font-medium rounded-lg transition-opacity duration-300 hover:shadow-lg transform hover:scale-105 transition-transform">
-            Learn More
+            More
           </button>
         </div>
       </div>
