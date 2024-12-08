@@ -12,6 +12,8 @@ import {
 import me from "../../assets/rasm.png";
 
 function Intro() {
+  // Commenting out visitor counter functionality
+  /*
   const [visitorCount, setVisitorCount] = useState(() => {
     return parseInt(localStorage.getItem("visitorCount")) || 0;
   });
@@ -42,6 +44,7 @@ function Intro() {
     // Cleanup interval on unmount
     return () => clearInterval(intervalId);
   }, []);
+  */
 
   const socialLinks = [
     {
@@ -72,7 +75,8 @@ function Intro() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative z-100 lg:order-2 lg:w-1/2 flex justify-center">
+            className="relative z-100 lg:order-2 lg:w-1/2 flex justify-center"
+          >
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 mx-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 blur-3xl opacity-30 animate-pulse" />
               <img
@@ -87,7 +91,8 @@ function Intro() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center relative z-100 lg:text-left lg:w-1/2 lg:order-1 flex flex-col items-center lg:items-start">
+            className="text-center relative z-100 lg:text-left lg:w-1/2 lg:order-1 flex flex-col items-center lg:items-start"
+          >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900">
                 Ravshanbekov Muhammadaziz
@@ -128,18 +133,20 @@ function Intro() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}>
+                    className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}
+                  >
                     <Icon className="w-8 h-8" />
                   </motion.a>
                 ))}
               </div>
 
-              {/* Visitor Counter */}
+              {/* Commenting out visitor counter UI
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex items-center gap-2 text-gray-600 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                className="flex items-center gap-2 text-gray-600 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm"
+              >
                 <FaEye className="w-4 h-4" />
                 <span className="text-sm font-medium">
                   <span className="font-semibold text-indigo-600">
@@ -148,6 +155,7 @@ function Intro() {
                   visitors
                 </span>
               </motion.div>
+              */}
             </div>
           </motion.div>
         </div>
