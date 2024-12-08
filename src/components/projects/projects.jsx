@@ -273,11 +273,12 @@ function ProjectsSection() {
       image: project1,
       technologies: [
         "React",
-        "Electron",
+        "Electron.js",
         "Node.js",
+        "1C",
+        "Typescript",
         "PostgreSQL",
         "Tailwind CSS",
-        "Redux",
       ],
       features: [
         "Real-time inventory tracking and management",
