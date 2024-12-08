@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import {
@@ -7,10 +7,32 @@ import {
   FaTelegram,
   FaInstagram,
   FaTwitter,
+  FaEye,
 } from "react-icons/fa";
 import me from "../../assets/rasm.png";
 
 function Intro() {
+  const [visitorCount, setVisitorCount] = useState(0);
+
+  useEffect(() => {
+    // Get current visitor count from localStorage
+    const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
+    
+    // Check if this is a new session
+    const lastVisit = localStorage.getItem('lastVisit');
+    const now = new Date().getTime();
+    
+    // If it's been more than 1 hour since last visit, count as new visit
+    if (!lastVisit || (now - parseInt(lastVisit)) > 3600000) {
+      const newCount = currentCount + 1;
+      localStorage.setItem('visitorCount', newCount.toString());
+      localStorage.setItem('lastVisit', now.toString());
+      setVisitorCount(newCount);
+    } else {
+      setVisitorCount(currentCount);
+    }
+  }, []);
+
   const socialLinks = [
     {
       Icon: FaGithub,
@@ -85,20 +107,37 @@ function Intro() {
               simple, beautiful, and intuitive solutions.
             </p>
 
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6">
-              {socialLinks.map(({ Icon, href, color }) => (
-                <motion.a
-                  key={href}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}>
-                  <Icon className="w-8 h-8" />
-                </motion.a>
-              ))}
+            <div className="flex flex-col items-center lg:items-start gap-6">
+              {/* Social Links */}
+              <div className="flex justify-center lg:justify-start space-x-6">
+                {socialLinks.map(({ Icon, href, color }) => (
+                  <motion.a
+                    key={href}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}>
+                    <Icon className="w-8 h-8" />
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* Visitor Counter */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex items-center gap-2 text-gray-600 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <FaEye className="w-4 h-4" />
+                <span className="text-sm font-medium">
+                  <span className="font-semibold text-indigo-600">
+                    {visitorCount.toLocaleString()}
+                  </span>{" "}
+                  visitors
+                </span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
