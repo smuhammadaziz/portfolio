@@ -20,7 +20,9 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[900] overflow-y-auto bg-black/60 backdrop-blur-sm"
         onClick={handleBackdropClick}>
-        <div className="min-h-screen w-full py-8 px-4 flex items-center justify-center" onClick={handleBackdropClick}>
+        <div
+          className="min-h-screen w-full py-8 px-4 flex items-center justify-center"
+          onClick={handleBackdropClick}>
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -70,7 +72,7 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
                   <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-4">
                     {project.title}
                   </h2>
-                  
+
                   <div className="space-y-4">
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                       {project.description}
@@ -186,19 +188,10 @@ const ProjectCard = ({ project, onClick }) => {
           <div className="flex justify-between items-center">
             <button
               onClick={onClick}
-              className="text-indigo-600 font-medium text-sm hover:text-indigo-700 transition-colors">
+              className="text-white py-2 rounded-lg px-3 bg-indigo-600 font-medium text-sm hover:scale-105 ease transition-opacity duration-300 transform transition-transform">
               Learn More
             </button>
             <div className="flex gap-3">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 transition-colors">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              )}
               {project.demo && (
                 <a
                   href={project.demo}
@@ -259,7 +252,7 @@ function ProjectsSection() {
       ],
       github: "https://github.com/yourusername/telegram-bot",
       demo: "https://t.me/your_bot_username",
-    }
+    },
   ];
 
   const handleOpenModal = (project) => {
