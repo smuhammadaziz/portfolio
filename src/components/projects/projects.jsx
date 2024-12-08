@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+import project1 from "../../assets/project6.jpg";
+import project2 from "../../assets/project4.jpg";
+
 const ProjectModal = ({ isOpen, project, onClose }) => {
   if (!isOpen) return null;
 
@@ -218,7 +221,7 @@ function ProjectsSection() {
       title: "ERP System",
       description:
         "A comprehensive Enterprise Resource Planning system built with React and Electron.js, featuring inventory management, employee tracking, and financial reporting.",
-      image: "/projects/erp-system.png",
+      image: project1,
       technologies: [
         "React",
         "Electron",
@@ -241,7 +244,7 @@ function ProjectsSection() {
       title: "Telegram Bot Platform",
       description:
         "A versatile Telegram bot platform built with Python, enabling automated responses, custom commands, and integration with external services.",
-      image: "/projects/telegram-bot.png",
+      image: project2,
       technologies: ["Python", "Aiogram", "PostgreSQL", "Redis", "Docker"],
       features: [
         "Natural language processing for user queries",
