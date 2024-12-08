@@ -12,25 +12,35 @@ import {
 import me from "../../assets/rasm.png";
 
 function Intro() {
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitorCount, setVisitorCount] = useState(() => {
+    return parseInt(localStorage.getItem("visitorCount")) || 0;
+  });
+
+  const updateVisitorCount = () => {
+    try {
+      // Get current count
+      const currentCount = parseInt(localStorage.getItem("visitorCount")) || 0;
+      // Always increment on new visit
+      const newCount = currentCount + 1;
+      localStorage.setItem("visitorCount", newCount.toString());
+      setVisitorCount(newCount);
+    } catch (error) {
+      console.error("Error updating visitor count:", error);
+    }
+  };
 
   useEffect(() => {
-    // Get current visitor count from localStorage
-    const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
-    
-    // Check if this is a new session
-    const lastVisit = localStorage.getItem('lastVisit');
-    const now = new Date().getTime();
-    
-    // If it's been more than 1 hour since last visit, count as new visit
-    if (!lastVisit || (now - parseInt(lastVisit)) > 3600000) {
-      const newCount = currentCount + 1;
-      localStorage.setItem('visitorCount', newCount.toString());
-      localStorage.setItem('lastVisit', now.toString());
-      setVisitorCount(newCount);
-    } else {
+    // Update count immediately when component mounts
+    updateVisitorCount();
+
+    // Set up auto-refresh every 10 seconds
+    const intervalId = setInterval(() => {
+      const currentCount = parseInt(localStorage.getItem("visitorCount")) || 0;
       setVisitorCount(currentCount);
-    }
+    }, 10000);
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const socialLinks = [
