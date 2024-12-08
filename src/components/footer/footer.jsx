@@ -25,7 +25,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-slate-100 border-t border-slate-200 py-12">
+    <footer className="bg-slate-50 border-t border-slate-200 py-8">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -37,25 +37,25 @@ function Footer() {
           <motion.div
             variants={itemVariants}
             className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2 text-slate-800">
+            <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
               Muhammadaziz Ravshanbekov
             </h3>
-            <p className="text-slate-600 text-sm">
+            <p className="text-slate-700 text-sm">
               {new Date().getFullYear()} All rights reserved
             </p>
           </motion.div>
 
           {/* Middle: Navigation */}
           <motion.div variants={itemVariants} className="text-center">
-            <div className="flex justify-center space-x-6 text-slate-600">
+            <div className="flex justify-center space-x-6 text-slate-700">
               <a
                 href="#intro"
-                className="hover:text-slate-900 transition-colors duration-300 text-sm hover:underline decoration-slate-400 underline-offset-4">
+                className="hover:text-slate-900 transition-colors duration-300 text-md hover:underline decoration-slate-400 underline-offset-4">
                 About Me
               </a>
               <a
                 href="#skills"
-                className="hover:text-slate-900 transition-colors duration-300 text-sm hover:underline decoration-slate-400 underline-offset-4">
+                className="hover:text-slate-900 transition-colors duration-300 text-md hover:underline decoration-slate-400 underline-offset-4">
                 Skills
               </a>
             </div>
@@ -70,21 +70,21 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaTelegram className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              <FaTelegram className="w-5 h-5 text-slate-900 group-hover:text-blue-600" />
             </a>
             <a
               href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaLinkedin className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              <FaLinkedin className="w-5 h-5 text-slate-900 group-hover:text-blue-600" />
             </a>
             <a
               href="https://github.com/smuhammadaziz"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaGithub className="w-5 h-5 text-slate-700 group-hover:text-slate-900" />
+              <FaGithub className="w-5 h-5 text-slate-900 group-hover:text-slate-800" />
             </a>
           </motion.div>
         </div>
