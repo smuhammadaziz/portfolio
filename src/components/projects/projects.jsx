@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { IoMdClose, IoMdExpand } from "react-icons/io";
 
 import project1 from "../../assets/project6.jpg";
 import project2 from "../../assets/project4.jpg";
 
-const ProjectModal = ({ isOpen, project, onClose }) => {
+const ImageViewer = ({ isOpen, image, title, description, onClose }) => {
   if (!isOpen) return null;
-
-  // Handle click outside modal
-  const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
 
   return (
     <AnimatePresence>
@@ -21,125 +15,185 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[900] overflow-y-auto bg-black/60 backdrop-blur-sm"
-        onClick={handleBackdropClick}>
-        <div
-          className="min-h-screen w-full py-8 px-4 flex items-center justify-center"
-          onClick={handleBackdropClick}>
+        className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-lg"
+        onClick={onClose}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white z-50"
+          aria-label="Close fullscreen"
+        >
+          <IoMdClose className="w-6 h-6" />
+        </button>
+        
+        <div className="h-full w-full flex flex-col justify-center items-center p-4">
           <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            transition={{ type: "spring", duration: 0.5 }}
-            className="relative w-full max-w-4xl bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 mx-auto"
-            onClick={(e) => e.stopPropagation()}>
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white rounded-2xl opacity-90 z-0" />
-
-            <div className="relative z-10">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onClose();
-                }}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-3 rounded-full hover:bg-gray-100 active:bg-gray-200 touch-manipulation z-50"
-                aria-label="Close modal">
-                <svg
-                  className="w-6 h-6 text-gray-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                {/* Project Image */}
-                <div className="w-full md:w-1/2">
-                  <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="object-cover w-full h-full transform hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Project Details */}
-                <div className="w-full md:w-1/2">
-                  <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-4">
-                    {project.title}
-                  </h2>
-
-                  <div className="space-y-4">
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {project.description}
-                    </p>
-
-                    {/* Technologies Used */}
-                    <div className="border-t border-gray-200 pt-4">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3">
-                        Technologies Used
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-2 sm:px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs sm:text-sm font-medium">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Key Features */}
-                    <div className="border-t border-gray-200 pt-4">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3">
-                        Key Features
-                      </h3>
-                      <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-600">
-                        {project.features.map((feature, index) => (
-                          <li key={index}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base">
-                          <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
-                          <span>View Code</span>
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm sm:text-base">
-                          <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
-                          <span>Live Demo</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="max-h-[80vh] w-full flex justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={image}
+              alt={title}
+              className="object-contain max-h-full rounded-lg"
+            />
+          </motion.div>
+          
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 20, opacity: 0 }}
+            className="mt-4 max-w-2xl text-center"
+          >
+            <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
+            <p className="text-gray-300 text-sm">{description}</p>
           </motion.div>
         </div>
       </motion.div>
     </AnimatePresence>
+  );
+};
+
+const ProjectModal = ({ isOpen, project, onClose }) => {
+  const [isImageViewerOpen, setIsImageViewerOpen] = useState(false);
+
+  if (!isOpen) return null;
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  return (
+    <>
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[900] overflow-y-auto bg-black/60 backdrop-blur-sm"
+          onClick={handleBackdropClick}>
+          <div
+            className="min-h-screen w-full py-8 px-4 flex items-center justify-center"
+            onClick={handleBackdropClick}>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative w-full max-w-4xl bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 mx-auto"
+              onClick={(e) => e.stopPropagation()}>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white rounded-2xl opacity-90 z-0" />
+
+              <div className="relative z-10">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 p-3 rounded-full hover:bg-gray-100 active:bg-gray-200 touch-manipulation z-50"
+                  aria-label="Close modal">
+                  <IoMdClose className="w-6 h-6 text-gray-500" />
+                </button>
+
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                  {/* Project Image */}
+                  <div className="w-full md:w-1/2">
+                    <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg group">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <button
+                        onClick={() => setIsImageViewerOpen(true)}
+                        className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300"
+                      >
+                        <IoMdExpand className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="w-full md:w-1/2">
+                    <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900 mb-4">
+                      {project.title}
+                    </h2>
+
+                    <div className="space-y-4">
+                      <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        {project.description}
+                      </p>
+
+                      {/* Technologies Used */}
+                      <div className="border-t border-gray-200 pt-4">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3">
+                          Technologies Used
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, index) => (
+                            <span
+                              key={index}
+                              className="px-2 sm:px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs sm:text-sm font-medium">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Key Features */}
+                      <div className="border-t border-gray-200 pt-4">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3">
+                          Key Features
+                        </h3>
+                        <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-600">
+                          {project.features.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Links */}
+                      <div className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base">
+                            <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span>View Code</span>
+                          </a>
+                        )}
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm sm:text-base">
+                            <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
+                            <span>Live Demo</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      
+      <ImageViewer
+        isOpen={isImageViewerOpen}
+        image={project?.image}
+        title={project?.title}
+        description={project?.description}
+        onClose={() => setIsImageViewerOpen(false)}
+      />
+    </>
   );
 };
 
