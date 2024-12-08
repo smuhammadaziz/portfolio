@@ -31,27 +31,10 @@ function Intro() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24">
-      {/* Background Social Links */}
-      <div className="absolute top-4 right-4 z-10 flex space-x-4">
-        {socialLinks.map(({ Icon, href, color }, index) => (
-          <motion.a
-            key={href}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className={`text-gray-500 ${color} transition-all duration-300 ease-in-out hover:scale-110 shadow-md hover:shadow-lg rounded-lg p-2`}>
-            <Icon className="w-6 h-6" />
-          </motion.a>
-        ))}
-      </div>
-
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white to-indigo-50 opacity-70" />
       <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-[0.1]" />
 
-      <div className="container mx-auto px-6 md:px-40 relative z-50">
+      <div className="container mx-auto px-6 md:px-40 relative z-50 py-8">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
