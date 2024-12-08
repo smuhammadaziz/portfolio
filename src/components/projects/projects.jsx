@@ -16,37 +16,33 @@ const ImageViewer = ({ isOpen, image, title, description, onClose }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-lg"
-        onClick={onClose}
-      >
+        onClick={onClose}>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white z-50"
-          aria-label="Close fullscreen"
-        >
+          aria-label="Close fullscreen">
           <IoMdClose className="w-6 h-6" />
         </button>
-        
+
         <div className="h-full w-full flex flex-col justify-center items-center p-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             className="max-h-[80vh] w-full flex justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
+            onClick={(e) => e.stopPropagation()}>
             <img
               src={image}
               alt={title}
               className="object-contain max-h-full rounded-lg"
             />
           </motion.div>
-          
+
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 20, opacity: 0 }}
-            className="mt-4 max-w-2xl text-center"
-          >
+            className="mt-4 max-w-2xl text-center">
             <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
             <p className="text-gray-300 text-sm">{description}</p>
           </motion.div>
@@ -108,8 +104,7 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
                       />
                       <button
                         onClick={() => setIsImageViewerOpen(true)}
-                        className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300"
-                      >
+                        className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300">
                         <IoMdExpand className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300" />
                       </button>
                     </div>
@@ -185,7 +180,7 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
           </div>
         </motion.div>
       </AnimatePresence>
-      
+
       <ImageViewer
         isOpen={isImageViewerOpen}
         image={project?.image}
@@ -246,7 +241,7 @@ const ProjectCard = ({ project, onClick }) => {
             <button
               onClick={onClick}
               className="text-white py-2 rounded-lg px-3 bg-indigo-600 font-medium text-sm hover:scale-105 ease transition-opacity duration-300 transform transition-transform">
-              Learn More
+              See More
             </button>
             <div className="flex gap-3">
               {project.demo && (
