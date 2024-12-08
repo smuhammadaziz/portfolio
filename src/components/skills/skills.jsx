@@ -148,6 +148,22 @@ function SkillsSection() {
         "I use TypeScript to build large-scale applications with better type safety and improved developer experience. It helps catch errors early and makes code more maintainable.",
     },
     {
+      name: "Electron",
+      icon: <SiElectron size={50} className="text-blue-600" />,
+      description:
+        "Used for building cross-platform desktop apps with web technologies. I've created several Electron apps.",
+      detailedDescription:
+        "Electron is great for building cross-platform desktop apps. I've used it to create applications that integrate with web technologies for seamless user experiences.",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss size={50} className="text-teal-400" />,
+      description:
+        "Utility-first CSS framework. I leverage Tailwind for fast prototyping and developing scalable UI components.",
+      detailedDescription:
+        "Tailwind CSS allows me to quickly design responsive UIs without writing custom CSS, focusing on reusable utility classes for fast prototyping.",
+    },
+    {
       name: "Python",
       icon: <FaPython size={50} className="text-blue-500" />,
       description:
@@ -171,14 +187,7 @@ function SkillsSection() {
       detailedDescription:
         "CSS3 is essential for creating responsive layouts and designing attractive, mobile-first UIs using Flexbox and Grid.",
     },
-    {
-      name: "Tailwind CSS",
-      icon: <SiTailwindcss size={50} className="text-teal-400" />,
-      description:
-        "Utility-first CSS framework. I leverage Tailwind for fast prototyping and developing scalable UI components.",
-      detailedDescription:
-        "Tailwind CSS allows me to quickly design responsive UIs without writing custom CSS, focusing on reusable utility classes for fast prototyping.",
-    },
+
     {
       name: "Git",
       icon: <FaGitAlt size={50} className="text-red-600" />,
@@ -210,14 +219,6 @@ function SkillsSection() {
         "Cloud computing platform. I use AWS services for deploying and scaling applications.",
       detailedDescription:
         "I leverage various AWS services like EC2, S3, and Lambda for building scalable cloud infrastructure and deploying applications.",
-    },
-    {
-      name: "Electron",
-      icon: <SiElectron size={50} className="text-blue-600" />,
-      description:
-        "Used for building cross-platform desktop apps with web technologies. I've created several Electron apps.",
-      detailedDescription:
-        "Electron is great for building cross-platform desktop apps. I've used it to create applications that integrate with web technologies for seamless user experiences.",
     },
   ];
 
