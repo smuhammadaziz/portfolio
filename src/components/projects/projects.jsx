@@ -5,6 +5,9 @@ import { IoMdClose, IoMdExpand } from "react-icons/io";
 
 import project1 from "../../assets/project6.jpg";
 import project2 from "../../assets/project4.jpg";
+import project3 from "../../assets/project.jpg";
+import project4 from "../../assets/project2.jpg";
+import project5 from "../../assets/project3.jpg";
 
 const ImageViewer = ({ isOpen, image, title, description, onClose }) => {
   if (!isOpen) return null;
@@ -267,7 +270,7 @@ function ProjectsSection() {
 
   const projects = [
     {
-      title: "ERP System",
+      title: "ERP System Desktop App",
       description:
         "A comprehensive Enterprise Resource Planning system built with React and Electron.js, featuring inventory management, employee tracking, and financial reporting.",
       image: project1,
@@ -281,30 +284,75 @@ function ProjectsSection() {
         "Tailwind CSS",
       ],
       features: [
-        "Real-time inventory tracking and management",
-        "Employee attendance and performance monitoring",
-        "Financial reporting and analytics dashboard",
-        "Multi-user access with role-based permissions",
-        "Automated backup and data recovery",
+        "Developed a robust ERP system consolidating data from three 1C ecosystems.",
+        "Implemented real-time updates and streamlined workflows for enhanced productivity.",
+        "Enabled offline functionality with local database synchronization to a central system.",
       ],
-      github: "https://github.com/yourusername/erp-system",
-      demo: "https://erp-system-demo.com",
+      github: "",
+      demo: "",
     },
     {
-      title: "Telegram Bot Platform",
+      title: "Educore Online Platform",
+      description:
+        "Online Learning Platform, which allows to get new courses about IELTS, SAT, A-LEVEL.",
+      image: project3,
+      technologies: [
+        "React",
+        "Typescript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+      ],
+      features: [
+        "Make Main Website and include 3 types of dashboards which can be a CRM system.",
+        "Deployed whole application to the Plesk Server and opened Postgres database for backend",
+      ],
+      github: "https://github.com/smuhammadaziz/educore-main",
+      demo: "https://edu-front-lovat.vercel.app/",
+    },
+    {
+      title: "Telegram Bot",
       description:
         "A versatile Telegram bot platform built with Python, enabling automated responses, custom commands, and integration with external services.",
       image: project2,
-      technologies: ["Python", "Aiogram", "PostgreSQL", "Redis", "Docker"],
+      technologies: ["Python", "Aiogram", "PostgreSQL", "AWS", "DevOps"],
       features: [
-        "Natural language processing for user queries",
-        "Custom command handling and automation",
-        "Integration with external APIs and services",
-        "User session management and data persistence",
-        "Scalable architecture with Docker deployment",
+        "Implemented clean code principles and best practices, resulting in maintainable and efficient code.",
+        "Continuously improved and optimized bot functionalities, enhancing user experience and performance.",
       ],
-      github: "https://github.com/yourusername/telegram-bot",
-      demo: "https://t.me/your_bot_username",
+      github: "https://github.com/smuhammadaziz/osonbot",
+      demo: "https://t.me/osonkuBot",
+    },
+    {
+      title: "182nd school website",
+      description: "Created and Maintained 182nd school's official website",
+      image: project4,
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Javascript",
+        "Css",
+        "DevOps",
+        "Web Service",
+      ],
+      features: [
+        "Managed both back-end and front-end aspects of development process. Utilized front-end frameworks, such as React, to develop dynamic and interactive web applications. Built and integrated RESTful APIs for internal and external use.",
+      ],
+      github: "https://github.com/smuhammadaziz/school182-frontend",
+      demo: "https://www.182maktab.uz",
+    },
+    {
+      title: "YuniyGeniy Official Website",
+      description:
+        "Developed and maintained user-friendly webpages for kindergarden",
+      image: project5,
+      technologies: ["Next.js", "Bootstrap", "Javascript", "Git", "Css/Sass"],
+      features: [
+        "Collaborated with back-end developers to integrate user interface elements into applications.",
+      ],
+      github: "https://github.com/smuhammadaziz/yuniygeniy.uz",
+      demo: "https://yuniygeniy.uz/",
     },
   ];
 
