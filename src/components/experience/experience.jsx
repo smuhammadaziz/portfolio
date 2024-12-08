@@ -1,7 +1,10 @@
-import React from "react";
-import { FaBriefcase, FaCalendarAlt, FaTasks } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaBriefcase, FaCalendarAlt, FaTasks, FaChevronDown } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 function ExperienceSection() {
+  const [expandedExperience, setExpandedExperience] = useState(null);
+
   const experiences = [
     {
       year: "2024",
@@ -99,49 +102,112 @@ function ExperienceSection() {
     },
   ];
 
+  const handleExpand = (index) => {
+    setExpandedExperience(expandedExperience === index ? null : index);
+  };
+
   return (
-    <div className="myexperience py-16 bg-slate-100">
-      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12 text-center bg-white py-3">
-        My Work Experience
-      </h2>
-      <div className="container mx-auto px-6 md:px-40">
-        {experiences.map((yearlyExperience, index) => (
-          <div key={index} className="mb-12">
-            {yearlyExperience.details.map((experience, expIndex) => (
-              <div
-                key={expIndex}
-                className="flex flex-col md:flex-row items-start bg-white shadow-lg rounded-lg p-6 mb-8 hover:shadow-2xl transition-shadow duration-300">
-                {/* Icon */}
-                <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center mb-4 md:mb-0 md:mr-6">
-                  <FaBriefcase className="text-2xl" />
-                </div>
-                {/* Content */}
-                <div>
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    {experience.title}
-                  </h4>
-                  <p className="text-lg font-medium text-gray-600">
-                    {experience.company}
-                  </p>
-                  <div className="flex items-center text-gray-500 text-sm mt-2">
-                    <FaCalendarAlt className="mr-2" />
-                    <span>
-                      {experience.startDate} - {experience.endDate}
-                    </span>
-                  </div>
-                  <ul className="mt-4 list-disc list-inside text-gray-700 space-y-2">
-                    {experience.responsibilities.map((task, taskIndex) => (
-                      <li key={taskIndex} className="flex items-start">
-                        <FaTasks className="text-indigo-500 mr-2 mt-1" />
-                        <span>{task}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+    <div className="py-8 sm:py-16 bg-gradient-to-b from-slate-50 to-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-40">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-8 sm:mb-12 text-center"
+        >
+          Professional Journey
+        </motion.h2>
+
+        <div className="space-y-4 sm:space-y-6">
+          {experiences.map((yearlyExperience, yearIndex) => (
+            <div key={yearIndex}>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: yearIndex * 0.1 }}
+                className="text-xl sm:text-2xl font-bold text-slate-700 mb-3 sm:mb-4 pl-4 sm:pl-0"
+              >
+                {yearlyExperience.year}
+              </motion.div>
+
+              <div className="space-y-3 sm:space-y-4">
+                {yearlyExperience.details.map((experience, expIndex) => {
+                  const isExpanded = expandedExperience === `${yearIndex}-${expIndex}`;
+                  return (
+                    <motion.div
+                      key={expIndex}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: expIndex * 0.1 }}
+                      className="bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                    >
+                      <button
+                        onClick={() => handleExpand(`${yearIndex}-${expIndex}`)}
+                        className="w-full text-left p-4 sm:p-6 focus:outline-none"
+                      >
+                        <div className="flex items-start justify-between gap-3 sm:gap-4">
+                          <div className="flex gap-3 sm:gap-4">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-slate-700 to-slate-900 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                              <FaBriefcase className="text-base sm:text-xl" />
+                            </div>
+                            <div>
+                              <h3 className="text-base sm:text-xl font-bold text-slate-800 mb-0.5 sm:mb-1 pr-6">
+                                {experience.title}
+                              </h3>
+                              <p className="text-sm sm:text-base text-slate-600 font-medium">
+                                {experience.company}
+                              </p>
+                              <div className="flex items-center text-slate-500 text-xs sm:text-sm mt-1 sm:mt-2">
+                                <FaCalendarAlt className="mr-1.5 sm:mr-2" />
+                                <span>
+                                  {experience.startDate} - {experience.endDate}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <FaChevronDown
+                            className={`text-slate-400 transition-transform duration-300 text-sm sm:text-base ${
+                              isExpanded ? "transform rotate-180" : ""
+                            }`}
+                          />
+                        </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t border-slate-100 pt-3 sm:pt-4">
+                              <ul className="space-y-2 sm:space-y-3">
+                                {experience.responsibilities.map((task, taskIndex) => (
+                                  <motion.li
+                                    key={taskIndex}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.3, delay: taskIndex * 0.1 }}
+                                    className="flex items-start text-sm sm:text-base text-slate-600"
+                                  >
+                                    <FaTasks className="text-slate-400 mr-2 sm:mr-3 mt-1 flex-shrink-0 text-xs sm:text-sm" />
+                                    <span>{task}</span>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
