@@ -8,6 +8,7 @@ import project2 from "../../assets/project4.jpg";
 import project3 from "../../assets/project.jpg";
 import project4 from "../../assets/project2.jpg";
 import project5 from "../../assets/project3.jpg";
+import project7 from "../../assets/project7.png";
 
 const ImageViewer = ({ isOpen, image, title, description, onClose }) => {
   if (!isOpen) return null;
@@ -269,7 +270,29 @@ function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
+    
     {
+      title: "Numeo AI",
+      description:
+        "A next-generation logistics dispatching system built with AI to automate route planning, driver assignments, and delivery optimization — reducing costs and improving operational efficiency across fleets.",
+      image: project7,
+      technologies: [
+        "React",
+        "Node.js",
+        "Typescript",
+        "PostgreSQL",
+        "MongoDB",
+        "MUI",
+        "Rush.js"
+      ],
+      features: [
+        "AI-Powered Dispatching – Automatically assigns drivers and optimizes routes for maximum efficiency.",
+        "Real-Time Fleet Tracking – Monitor vehicle locations, delivery progress, and performance in real time.",
+        "Smart Load Optimization – Uses AI to balance loads, minimize fuel costs, and improve delivery speed.",
+      ],
+      github: "",
+      demo: "https://numeo.ai",
+    },{
       title: "ERP System Desktop App",
       description:
         "A comprehensive Enterprise Resource Planning system built with React and Electron.js, featuring inventory management, employee tracking, and financial reporting.",

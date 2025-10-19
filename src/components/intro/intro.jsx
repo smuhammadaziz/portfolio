@@ -117,9 +117,7 @@ function Intro() {
             </div>
 
             <p className="text-gray-700 mb-8 max-w-2xl text-center lg:text-left">
-              I'm a passionate developer focused on creating beautiful and
-              functional web applications. I love turning complex problems into
-              simple, beautiful, and intuitive solutions.
+              I’m a software engineer with 4+ years of experience building scalable web apps end-to-end. I take full ownership — from development to release monitoring — ensuring quality and reliability. I value clean architecture, strong communication, and accountability while constantly growing my skills for future challenges.
             </p>
 
             <div className="flex flex-col items-center lg:items-start gap-6">

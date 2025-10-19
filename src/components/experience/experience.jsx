@@ -7,13 +7,29 @@ function ExperienceSection() {
 
   const experiences = [
     {
+      year: "2025",
+      details: [
+        {
+          title: "Software Engineer",
+          company: "Numeo AI",
+          startDate: "05/2025",
+          endDate: "Present",
+          responsibilities: [
+            "Led the end-to-end development of an AI-powered logistics dispatching system, overseeing route planning, driver assignments, and delivery optimization with full ownership of technical deliverables.",
+            "Managed stakeholder communications and requirements gathering to ensure alignment with business goals, while coordinating cross-functional teams for seamless project execution.",
+            "Implemented post-release monitoring and performance optimization strategies to track metrics, resolve issues, and enhance productivity through real-time updates and streamlined workflows.",
+          ],
+        },
+      ],
+    },
+    {
       year: "2024",
       details: [
         {
           title: "Full-Stack Developer",
           company: "KSB-ERP ECOSYSTEM",
           startDate: "11/2024",
-          endDate: "Present",
+          endDate: "05/2025",
           responsibilities: [
             "A desktop application is being developed using Electron.js, which will contain many ERP system functions.",
             "Developed a robust ERP system consolidating data from three 1C ecosystems.",

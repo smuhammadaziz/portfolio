@@ -10,15 +10,15 @@ import {
 
 function AboutSection() {
   const personalInfo = {
-    location: "Tashkent/Andijan, Uzbekistan",
+    location: "Tashkent, Uzbekistan",
     email: "workmuhammadaziz@gmail.com",
     experience:
       "2.5+ years in Software Development, Currently working on building an ERP system using React and Electron JS, consolidating data across multiple ecosystems. Strong background in Software Development gained through specialized education and hands-on experience.",
     interests: [
       "Web Development",
       "System Architecture",
-      "Project Management",
       "Desktop Engineer",
+      "CI/CD",
     ],
   };
 
@@ -60,7 +60,7 @@ function AboutSection() {
               About Me
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Passionate about creating elegant solutions to complex problems
+              Passionate about creating solutions to complex problems
             </p>
           </motion.div>
 
@@ -112,7 +112,13 @@ function AboutSection() {
                         </h4>
                       </div>
                       <p className="text-gray-600 leading-relaxed">
-                        {personalInfo.experience}
+                        I’m a software engineer with 4+ years of experience building and maintaining scalable web applications from end to end. I take full ownership of my work — from planning and development to deployment and post-release monitoring — ensuring high reliability and performance at every stage.
+                      </p>
+                      <p className="text-gray-600 leading-relaxed mt-4">
+                        My experience spans both frontend and backend systems, working closely with stakeholders to align technical decisions with business goals. I value clean architecture, clear communication, and strong accountability — traits that help me deliver impact and build long-term value for any product or company I work with.
+                      </p>
+                      <p className="text-gray-600 leading-relaxed mt-4">
+                       I’m continuously improving my engineering mindset, learning how to balance speed, quality, and scalability — preparing myself for larger technical challenges and leadership opportunities ahead.
                       </p>
                     </div>
                   </div>
