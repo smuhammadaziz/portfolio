@@ -92,7 +92,7 @@ function Intro() {
             transition={{ delay: 0.3 }}
             className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Specializing in building scalable, performant web applications with modern technologies. Passionate about clean code, user-centric design, and solving complex problems.
+            Specializing in building scalable, performant web applications with modern technologies. Passionate about <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">clean code, user-centric design,</span> and <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">solving complex problems </span>.
           </motion.p>
 
           <motion.div
