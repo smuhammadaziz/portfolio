@@ -1,94 +1,49 @@
 import React from "react";
-import { FaTelegram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTelegram, FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Footer() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 py-8">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="container mx-auto px-6 md:px-40">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Left: Copyright */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-              Muhammadaziz Ravshanbekov
-            </h3>
-            <p className="text-slate-700 text-sm">
-              {new Date().getFullYear()} All rights reserved
-            </p>
-          </motion.div>
+    <footer className="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
-          {/* Middle: Navigation */}
-          <motion.div variants={itemVariants} className="text-center">
-            <div className="flex justify-center space-x-6 text-slate-700">
-              <a
-                href="#intro"
-                className="hover:text-slate-900 transition-colors duration-300 text-md hover:underline decoration-slate-400 underline-offset-4">
-                About Me
-              </a>
-              <a
-                href="#skills"
-                className="hover:text-slate-900 transition-colors duration-300 text-md hover:underline decoration-slate-400 underline-offset-4">
-                Skills
-              </a>
-            </div>
-          </motion.div>
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold text-white mb-2">Muhammadaziz</h3>
+            <p className="text-sm">Building digital experiences that matter.</p>
+          </div>
 
-          {/* Right: Social Links */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center md:justify-end space-x-4">
-            <a
-              href="https://t.me/rmuhammadaziz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaTelegram className="w-5 h-5 text-slate-900 group-hover:text-blue-600" />
+          {/* Links */}
+          <div className="flex gap-8 text-sm font-medium">
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#projects" className="hover:text-white transition-colors">Work</a>
+            <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          {/* Socials */}
+          <div className="flex gap-4">
+            <a href="https://github.com/smuhammadaziz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+              <FaGithub />
             </a>
-            <a
-              href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaLinkedin className="w-5 h-5 text-slate-900 group-hover:text-blue-600" />
+            <a href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <FaLinkedin />
             </a>
-            <a
-              href="https://github.com/smuhammadaziz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-200 p-3 rounded-lg hover:bg-slate-300 transition-all duration-300 group">
-              <FaGithub className="w-5 h-5 text-slate-900 group-hover:text-slate-800" />
+            <a href="https://t.me/rmuhammadaziz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300">
+              <FaTelegram />
             </a>
-          </motion.div>
+          </div>
+
         </div>
-      </motion.div>
+
+        <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          <p>&copy; {new Date().getFullYear()} Muhammadaziz Ravshanbekov. All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            Made with <FaHeart className="text-red-500 animate-pulse" /> in Tashkent
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }

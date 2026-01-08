@@ -1,163 +1,128 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import {
   FaGithub,
   FaLinkedin,
   FaTelegram,
-  FaInstagram,
-  FaTwitter,
-  FaEye,
 } from "react-icons/fa";
 import me from "../../assets/rasm.png";
 
 function Intro() {
-  // Commenting out visitor counter functionality
-  /*
-  const [visitorCount, setVisitorCount] = useState(() => {
-    return parseInt(localStorage.getItem("visitorCount")) || 0;
-  });
-
-  const updateVisitorCount = () => {
-    try {
-      // Get current count
-      const currentCount = parseInt(localStorage.getItem("visitorCount")) || 0;
-      // Always increment on new visit
-      const newCount = currentCount + 1;
-      localStorage.setItem("visitorCount", newCount.toString());
-      setVisitorCount(newCount);
-    } catch (error) {
-      console.error("Error updating visitor count:", error);
-    }
-  };
-
-  useEffect(() => {
-    // Update count immediately when component mounts
-    updateVisitorCount();
-
-    // Set up auto-refresh every 10 seconds
-    const intervalId = setInterval(() => {
-      const currentCount = parseInt(localStorage.getItem("visitorCount")) || 0;
-      setVisitorCount(currentCount);
-    }, 10000);
-
-    // Cleanup interval on unmount
-    return () => clearInterval(intervalId);
-  }, []);
-  */
-
   const socialLinks = [
     {
       Icon: FaGithub,
       href: "https://github.com/smuhammadaziz",
-      color: "hover:text-gray-700",
+      color: "hover:bg-gray-900 hover:text-white",
     },
     {
       Icon: FaLinkedin,
       href: "https://www.linkedin.com/in/muhammadaziz-ravshanbekov/",
-      color: "hover:text-blue-600",
+      color: "hover:bg-blue-600 hover:text-white",
     },
     {
       Icon: FaTelegram,
       href: "https://t.me/rmuhammadaziz",
-      color: "hover:text-blue-500",
+      color: "hover:bg-blue-500 hover:text-white",
     },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24">
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white to-indigo-50 opacity-70" />
-      <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-[0.1]" />
+    <section className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-slate-50">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-purple-200/40 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-indigo-200/40 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+      </div>
 
-      <div className="container mx-auto px-6 md:px-40 relative z-50 py-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="relative z-100 lg:order-2 lg:w-1/2 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm mb-8"
           >
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 mx-auto">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 blur-3xl opacity-30 animate-pulse" />
-              <img
-                src={me}
-                alt="Muhammadaziz"
-                className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
-              />
-            </div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">Available for Work</span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center relative z-100 lg:text-left lg:w-1/2 lg:order-1 flex flex-col items-center lg:items-start"
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight text-slate-900 mb-6 leading-[1.1]"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-900">
-                Ravshanbekov Muhammadaziz
-              </span>
-            </h1>
+            Building digital <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+              experiences
+            </span> that matter.
+          </motion.h1>
 
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-8 h-[60px] flex items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl text-slate-600 mb-10 h-10 font-light"
+          >
+            I am a <span className="font-semibold text-slate-900">
               <TypeAnimation
                 sequence={[
-                  "FullStack Web/Desktop Developer",
+                  "Software Engineer",
                   2000,
-                  "Desktop Engineer",
+                  "FullStack Developer",
                   2000,
-                  "Python Developer",
-                  2500,
+                  "UI/UX Enthusiast",
+                  2000,
                 ]}
                 wrapper="span"
                 cursor={true}
                 repeat={Infinity}
-                style={{ display: "inline-block" }}
               />
-            </div>
+            </span>
+          </motion.div>
 
-            <p className="text-gray-700 mb-8 max-w-2xl text-center lg:text-left">
-              I’m a software engineer with 4+ years of experience building scalable web apps end-to-end. I take full ownership — from development to release monitoring — ensuring quality and reliability. I value clean architecture, strong communication, and accountability while constantly growing my skills for future challenges.
-            </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+          >
+            Specializing in building scalable, performant web applications with modern technologies. Passionate about clean code, user-centric design, and solving complex problems.
+          </motion.p>
 
-            <div className="flex flex-col items-center lg:items-start gap-6">
-              {/* Social Links */}
-              <div className="flex justify-center lg:justify-start space-x-6">
-                {socialLinks.map(({ Icon, href, color }) => (
-                  <motion.a
-                    key={href}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-gray-800 ${color} transition-colors shadow-md hover:shadow-lg rounded-lg p-2`}
-                  >
-                    <Icon className="w-8 h-8" />
-                  </motion.a>
-                ))}
-              </div>
-
-              {/* Commenting out visitor counter UI
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex items-center gap-2 text-gray-600 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm"
-              >
-                <FaEye className="w-4 h-4" />
-                <span className="text-sm font-medium">
-                  <span className="font-semibold text-indigo-600">
-                    {visitorCount.toLocaleString()}
-                  </span>{" "}
-                  visitors
-                </span>
-              </motion.div>
-              */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-6"
+          >
+            <a href="#projects" className="px-8 py-4 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-slate-900/20">
+              View My Work
+            </a>
+            <div className="flex gap-4">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-4 bg-white rounded-full text-slate-700 shadow-sm border border-slate-200 transition-all hover:scale-110 ${link.color}`}
+                >
+                  <link.Icon className="text-xl" />
+                </a>
+              ))}
             </div>
           </motion.div>
+
         </div>
       </div>
+
+
     </section>
   );
 }

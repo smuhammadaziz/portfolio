@@ -1,231 +1,192 @@
 import React, { useState } from "react";
-import { FaBriefcase, FaCalendarAlt, FaTasks, FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaBriefcase, FaCalendarAlt, FaChevronDown, FaLaptopCode } from "react-icons/fa";
 
 function ExperienceSection() {
-  const [expandedExperience, setExpandedExperience] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
 
   const experiences = [
     {
-      year: "2025",
+      id: 1,
+      role: "Software Engineer",
+      company: "Numeo AI",
+      period: "05/2025 - Present",
+      description: "Leading the development of AI-powered logistics systems.",
+      tech: ["React", "Node.js", "AI", "PostgreSQL"],
       details: [
-        {
-          title: "Software Engineer",
-          company: "Numeo AI",
-          startDate: "05/2025",
-          endDate: "Present",
-          responsibilities: [
-            "Led the end-to-end development of an AI-powered logistics dispatching system, overseeing route planning, driver assignments, and delivery optimization with full ownership of technical deliverables.",
-            "Managed stakeholder communications and requirements gathering to ensure alignment with business goals, while coordinating cross-functional teams for seamless project execution.",
-            "Implemented post-release monitoring and performance optimization strategies to track metrics, resolve issues, and enhance productivity through real-time updates and streamlined workflows.",
-          ],
-        },
-      ],
+        "Led end-to-end development of an AI-powered logistics dispatching system.",
+        "Managed stakeholder communications and requirements gathering.",
+        "Implemented real-time monitoring and performance optimization strategies.",
+      ]
     },
     {
-      year: "2024",
+      id: 2,
+      role: "Full-Stack Developer",
+      company: "KSB-ERP ECOSYSTEM",
+      period: "11/2024 - 05/2025",
+      description: "Building comprehensive ERP solutions for enterprise management.",
+      tech: ["Electron", "React", "Node.js", "1C"],
       details: [
-        {
-          title: "Full-Stack Developer",
-          company: "KSB-ERP ECOSYSTEM",
-          startDate: "11/2024",
-          endDate: "05/2025",
-          responsibilities: [
-            "A desktop application is being developed using Electron.js, which will contain many ERP system functions.",
-            "Developed a robust ERP system consolidating data from three 1C ecosystems.",
-            "Enabled offline functionality with local database synchronization to a central system.",
-            "Used React, Electron JS, and Tailwind CSS for a seamless and efficient user interface.",
-            "Implemented real-time updates and streamlined workflows for enhanced productivity.",
-            "Developed a robust ERP system consolidating data from three 1C ecosystems.",
-          ],
-        },
-        {
-          title: "Front-End Developer and CTO",
-          company: "Educore Online Learning Platform",
-          startDate: "03/2024",
-          endDate: "08/2024",
-          responsibilities: [
-            "Collaborated closely with designers and other developers to complete tasks efficiently.",
-            "Built responsive web pages optimized for different devices.",
-            "Implemented best practices for SEO optimization of website pages and contents.",
-            "Developed a main website including 3 types of dashboards functioning as a CRM system.",
-            "Assisted in debugging application issues related to back-end systems.",
-            "Implemented RESTful web services and deployed the application on the Plesk Server.",
-          ],
-        },
-        {
-          title: "Python Full Stack Developer",
-          company: "Start Up Project",
-          startDate: "01/2023",
-          endDate: "08/2024",
-          responsibilities: [
-            "Developed a Telegram bot using Python and Aiogram framework, integrated with PostgreSQL.",
-            "Independently learned Python and Aiogram, starting from scratch.",
-            "Implemented clean code principles and continuously optimized bot functionalities.",
-          ],
-        },
-      ],
+        "Developed a robust ERP system consolidating data from three 1C ecosystems.",
+        "Built a desktop application using React and Electron.js for offline capabilities.",
+        "Streamlined workflows with real-time updates and synchronization.",
+      ]
     },
     {
-      year: "2023",
+      id: 3,
+      role: "CTO & Frontend Developer",
+      company: "Educore Learning",
+      period: "03/2024 - 08/2024",
+      description: "Technical leadership for an online learning platform.",
+      tech: ["React", "SEO", "Plesk", "CRM"],
       details: [
-        {
-          title: "Full Stack Web Developer and Team Lead",
-          company: "Startup Project",
-          startDate: "02/2023",
-          endDate: "02/2024",
-          responsibilities: [
-            "Built the website for the 182nd school in Tashkent and handed it over successfully.",
-            "Managed both back-end and front-end development processes.",
-            "Utilized React for dynamic and interactive web applications.",
-            "Built and integrated RESTful APIs for internal and external use.",
-            "Deployed projects on the Plesk server.",
-          ],
-        },
-      ],
+        "Developed a main website with 3 distinct dashboards (Student, Teacher, Admin).",
+        "Implemented SEO best practices and responsive design systems.",
+        "Deployed applications on Plesk Server and managed PostgreSQL databases.",
+      ]
     },
     {
-      year: "2022",
+      id: 4,
+      role: "Python Full Stack Developer",
+      company: "Start Up Project",
+      period: "01/2023 - 08/2024",
+      description: "Feature-rich Telegram bot development.",
+      tech: ["Python", "Aiogram", "PostgreSQL"],
       details: [
-        {
-          title: "Front-End Developer",
-          company: "Start Up Company",
-          startDate: "09/2022",
-          endDate: "12/2022",
-          responsibilities: [
-            "Created custom responsive designs optimized for various devices.",
-            "Integrated front-end code with server-side logic for dynamic pages.",
-            "Collaborated with back-end developers to integrate UI elements.",
-          ],
-        },
-      ],
+        "Developed a complex Telegram bot using Python and Aiogram.",
+        "Integrated PostgreSQL for reliable data persistence.",
+        "Optimized bot performance and user interaction flows.",
+      ]
     },
     {
-      year: "2021",
+      id: 5,
+      role: "Lead Web Developer",
+      company: "School 182",
+      period: "02/2023 - 02/2024",
+      description: "Digital transformation for an educational institution.",
+      tech: ["React", "API", "Full Stack"],
       details: [
-        {
-          title: "FrontEnd Developer",
-          company: "Dynamic Soft",
-          startDate: "11/2021",
-          endDate: "02/2022",
-          responsibilities: [
-            "Developed and maintained user-friendly webpages using React (Next.js).",
-            "Collaborated with teammates to improve development processes.",
-            "Integrated user interface elements with back-end logic.",
-          ],
-        },
-      ],
+        "Built and launched the official website for the 182nd school.",
+        "Managed the full SDLC from requirements to deployment.",
+        "Integrated RESTful APIs for dynamic content management.",
+      ]
+    },
+    {
+      id: 6,
+      role: "Frontend Developer",
+      company: "Start Up Company",
+      period: "09/2022 - 12/2022",
+      description: "UI/UX implementation for startup MVP.",
+      tech: ["Frontend", "UI/UX", "Responsive Design"],
+      details: [
+        "Created custom responsive designs optimized for mobile devices.",
+        "Collaborated with backend teams to integrate seamless APIs.",
+      ]
+    },
+    {
+      id: 7,
+      role: "Frontend Developer",
+      company: "Dynamic Soft",
+      period: "11/2021 - 02/2022",
+      description: "Early career development in web technologies.",
+      tech: ["Next.js", "React", "Teamwork"],
+      details: [
+        "Developed user-friendly webpages using Next.js.",
+        "Participated in agile development processes and team code reviews.",
+      ]
     },
   ];
 
-  const handleExpand = (index) => {
-    setExpandedExperience(expandedExperience === index ? null : index);
-  };
-
   return (
-    <div className="py-8 sm:py-16 bg-gradient-to-b from-slate-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 md:px-40">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-8 sm:mb-12 text-center"
-        >
-          Professional Journey
-        </motion.h2>
+    <section id="experience" className="py-24 bg-slate-50">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 mb-6">
+            Professional Journey
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            My career path from early development to technical leadership.
+          </p>
+        </div>
 
-        <div className="space-y-4 sm:space-y-6">
-          {experiences.map((yearlyExperience, yearIndex) => (
-            <div key={yearIndex}>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: yearIndex * 0.1 }}
-                className="text-xl sm:text-2xl font-bold text-slate-700 mb-3 sm:mb-4 pl-4 sm:pl-0"
-              >
-                {yearlyExperience.year}
-              </motion.div>
+        <div className="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-12">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="relative pl-8 md:pl-12 group"
+            >
+              {/* Timeline Dot */}
+              <div className="absolute top-0 left-[-9px] md:left-[-9px] w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-sm ring-1 ring-slate-200 group-hover:ring-indigo-300 transition-all" />
 
-              <div className="space-y-3 sm:space-y-4">
-                {yearlyExperience.details.map((experience, expIndex) => {
-                  const isExpanded = expandedExperience === `${yearIndex}-${expIndex}`;
-                  return (
-                    <motion.div
-                      key={expIndex}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: expIndex * 0.1 }}
-                      className="bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                      <button
-                        onClick={() => handleExpand(`${yearIndex}-${expIndex}`)}
-                        className="w-full text-left p-4 sm:p-6 focus:outline-none"
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="flex flex-col md:flex-row md:items-center justify-between pointer-events-none mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                      {exp.role}
+                    </h3>
+                    <div className="text-indigo-600 font-medium text-sm flex items-center gap-2 mt-1">
+                      <FaBriefcase size={14} /> {exp.company}
+                    </div>
+                  </div>
+                  <div className="mt-2 md:mt-0 text-slate-500 font-medium text-sm bg-slate-50 px-3 py-1 rounded-full inline-block md:inline-flex items-center gap-2">
+                    <FaCalendarAlt size={12} /> {exp.period}
+                  </div>
+                </div>
+
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6 pointer-events-none">
+                  {exp.tech.map((t, i) => (
+                    <span key={i} className="px-3 py-1 bg-slate-50 text-slate-600 rounded-lg text-xs font-semibold uppercase tracking-wide border border-slate-100">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Expandable Details */}
+                <div className="border-t border-slate-100 pt-4">
+                  <button
+                    onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
+                    className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors focus:outline-none"
+                  >
+                    {expandedId === exp.id ? "Hide Details" : "View Responsibilities"}
+                    <FaChevronDown className={`transform transition-transform ${expandedId === exp.id ? "rotate-180" : ""}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {expandedId === exp.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
                       >
-                        <div className="flex items-start justify-between gap-3 sm:gap-4">
-                          <div className="flex gap-3 sm:gap-4">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-slate-700 to-slate-900 text-white rounded-lg flex items-center justify-center flex-shrink-0">
-                              <FaBriefcase className="text-base sm:text-xl" />
-                            </div>
-                            <div>
-                              <h3 className="text-base sm:text-xl font-bold text-slate-800 mb-0.5 sm:mb-1 pr-6">
-                                {experience.title}
-                              </h3>
-                              <p className="text-sm sm:text-base text-slate-600 font-medium">
-                                {experience.company}
-                              </p>
-                              <div className="flex items-center text-slate-500 text-xs sm:text-sm mt-1 sm:mt-2">
-                                <FaCalendarAlt className="mr-1.5 sm:mr-2" />
-                                <span>
-                                  {experience.startDate} - {experience.endDate}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <FaChevronDown
-                            className={`text-slate-400 transition-transform duration-300 text-sm sm:text-base ${
-                              isExpanded ? "transform rotate-180" : ""
-                            }`}
-                          />
-                        </div>
-                      </button>
-
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t border-slate-100 pt-3 sm:pt-4">
-                              <ul className="space-y-2 sm:space-y-3">
-                                {experience.responsibilities.map((task, taskIndex) => (
-                                  <motion.li
-                                    key={taskIndex}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.3, delay: taskIndex * 0.1 }}
-                                    className="flex items-start text-sm sm:text-base text-slate-600"
-                                  >
-                                    <FaTasks className="text-slate-400 mr-2 sm:mr-3 mt-1 flex-shrink-0 text-xs sm:text-sm" />
-                                    <span>{task}</span>
-                                  </motion.li>
-                                ))}
-                              </ul>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  );
-                })}
+                        <ul className="pt-4 space-y-2">
+                          {exp.details.map((detail, i) => (
+                            <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                              <span className="mt-1.5 w-1.5 h-1.5 bg-indigo-400 rounded-full shrink-0" />
+                              <span className="leading-relaxed">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 

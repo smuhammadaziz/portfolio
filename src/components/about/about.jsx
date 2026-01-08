@@ -1,170 +1,118 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaBriefcase,
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
+  FaCode,
+  FaLaptopCode,
+  FaRocket,
+  FaServer,
 } from "react-icons/fa";
 
 function AboutSection() {
-  const personalInfo = {
-    location: "Tashkent, Uzbekistan",
-    email: "workmuhammadaziz@gmail.com",
-    experience:
-      "2.5+ years in Software Development, Currently working on building an ERP system using React and Electron JS, consolidating data across multiple ecosystems. Strong background in Software Development gained through specialized education and hands-on experience.",
-    interests: [
-      "Web Development",
-      "System Architecture",
-      "Desktop Engineer",
-      "CI/CD",
-    ],
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+  const stats = [
+    { label: "Years Experience", value: "4+" },
+    { label: "Projects Completed", value: "50+" },
+    { label: "Happy Clients", value: "20+" },
+  ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-indigo-50/30">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.1]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-b from-transparent via-indigo-200 to-transparent" />
-      </div>
+    <section id="about" className="py-24 bg-white relative">
+      {/* Decor */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-4xl mx-auto">
-          <motion.div variants={itemVariants} className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-              About Me
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Passionate about creating solutions to complex problems
-            </p>
+          className="mb-16 md:mb-24 text-center md:text-left"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold font-display text-slate-900 mb-6 tracking-tight">
+            Code is my canvas.
+          </h2>
+          <p className="text-xl text-slate-500 max-w-2xl leading-relaxed">
+            I don't just write code; I craft digital ecosystems. My mission is to bridge the gap between complex engineering and intuitive user experiences.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+          {/* Card 1: Main Narrative */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="md:col-span-2 bg-slate-50 rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+          >
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Journey</h3>
+              <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+                I started my journey exploring the command line, fascinated by how lines of text could control machines. Today, I engineer enterprise-grade solutions.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-lg">
+                From optimizing database queries to fine-tuning micro-interactions, I obsess over every detail. I believe that great software is indistinguishable from magic.
+              </p>
+            </div>
+
+            {/* Abstract decorative shape */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-200/50 transition-colors duration-500" />
           </motion.div>
 
+          {/* Card 2: Stats */}
           <motion.div
-            variants={itemVariants}
-            className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            {/* Hero Section */}
-            <div className="relative px-6 py-16 sm:px-12 sm:py-20 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50" />
-
-              <div className="relative">
-                <motion.div
-                  variants={itemVariants}
-                  className="max-w-3xl mx-auto text-center mb-12">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                    Muhammadaziz Ravshanbekov
-                  </h3>
-                  <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                    A passionate software engineer focused on creating beautiful
-                    and functional web applications. I love turning complex
-                    problems into simple, beautiful, and intuitive solutions.
-                  </p>
-                  <div className="flex flex-wrap items-center justify-center gap-4">
-                    <a
-                      href={`mailto:${personalInfo.email}`}
-                      className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 hover:bg-indigo-100 transition-colors group">
-                      <FaEnvelope className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                      <span>{personalInfo.email}</span>
-                    </a>
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 text-gray-600">
-                      <FaMapMarkerAlt className="w-4 h-4 mr-2" />
-                      <span>{personalInfo.location}</span>
-                    </span>
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white flex flex-col justify-between relative overflow-hidden group shadow-xl shadow-slate-900/10"
+          >
+            <div className="relative z-10">
+              {stats.map((stat, i) => (
+                <div key={i} className="mb-8 last:mb-0">
+                  <div className="text-4xl md:text-5xl font-bold font-display mb-1 text-indigo-400 group-hover:text-white transition-colors duration-300">
+                    {stat.value}
                   </div>
-                </motion.div>
+                  <div className="text-slate-400 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
 
-                <motion.div
-                  variants={itemVariants}
-                  className="max-w-3xl mx-auto">
-                  <div className="relative">
-                    <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-indigo-200 to-transparent" />
-                    <div className="pl-8">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="p-2 bg-indigo-50 rounded-xl">
-                          <FaBriefcase className="w-6 h-6 text-indigo-600" />
-                        </div>
-                        <h4 className="text-xl font-bold text-gray-900">
-                          Professional Journey
-                        </h4>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed">
-                        I’m a software engineer with 4+ years of experience building and maintaining scalable web applications from end to end. I take full ownership of my work — from planning and development to deployment and post-release monitoring — ensuring high reliability and performance at every stage.
-                      </p>
-                      <p className="text-gray-600 leading-relaxed mt-4">
-                        My experience spans both frontend and backend systems, working closely with stakeholders to align technical decisions with business goals. I value clean architecture, clear communication, and strong accountability — traits that help me deliver impact and build long-term value for any product or company I work with.
-                      </p>
-                      <p className="text-gray-600 leading-relaxed mt-4">
-                       I’m continuously improving my engineering mindset, learning how to balance speed, quality, and scalability — preparing myself for larger technical challenges and leadership opportunities ahead.
-                      </p>
-                    </div>
+            <div className="absolute bottom-0 right-0 w-48 h-48 bg-indigo-600 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+          </motion.div>
+
+          {/* Card 3: What I Do */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="md:col-span-3 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
+          >
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <h3 className="text-3xl font-bold mb-4">Full Stack Excellence</h3>
+                <p className="text-indigo-100 text-lg">
+                  I handle the entire lifecycle. From architectural design to deployment pipelines.
+                </p>
+              </div>
+
+              <div className="flex gap-4 flex-wrap">
+                {[
+                  { icon: FaLaptopCode, label: "Frontend" },
+                  { icon: FaServer, label: "Backend" },
+                  { icon: FaCode, label: "Architecture" },
+                  { icon: FaRocket, label: "Performance" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <item.icon className="text-indigo-200" />
+                    <span className="font-medium text-sm">{item.label}</span>
                   </div>
-                </motion.div>
+                ))}
               </div>
             </div>
-
-            {/* Interests Section */}
-            <div className="px-6 py-12 sm:px-12 bg-gradient-to-b from-gray-50/50 to-white border-t border-gray-100">
-              <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
-                <div className="flex flex-wrap justify-center gap-3">
-                  {personalInfo.interests.map((interest) => (
-                    <motion.span
-                      key={interest}
-                      variants={itemVariants}
-                      className="px-6 py-3 bg-white shadow-sm hover:shadow-md rounded-xl text-gray-600 transition-all duration-300">
-                      {interest}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Social Links */}
-            <div className="px-6 py-8 sm:px-12 bg-gray-50 border-t border-gray-100">
-              <motion.div
-                variants={itemVariants}
-                className="flex justify-center items-center gap-6">
-                <a
-                  href="https://github.com/smuhammadaziz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300">
-                  <FaGithub className="w-6 h-6 text-gray-700" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/muhammadaziz-ravshanbekov/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300">
-                  <FaLinkedin className="w-6 h-6 text-[#0077b5]" />
-                </a>
-              </motion.div>
-            </div>
           </motion.div>
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );
