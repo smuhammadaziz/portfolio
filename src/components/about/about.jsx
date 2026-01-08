@@ -10,8 +10,8 @@ import {
 function AboutSection() {
   const stats = [
     { label: "Years Experience", value: "4+" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Happy Clients", value: "20+" },
+    { label: "Projects Worked", value: "20+" },
+    { label: "Happy Clients", value: "500+" },
   ];
 
   return (
