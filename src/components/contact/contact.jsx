@@ -1,122 +1,107 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope, FaTelegram, FaPhoneAlt } from "react-icons/fa";
 
 function ContactSection() {
   return (
-    <section className="py-24 bg-slate-900 relative overflow-hidden text-white">
+    <section id="contact" className="py-24 bg-slate-900 relative overflow-hidden text-white">
       {/* Abstract Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-violet-500/20 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
-          {/* Left: Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        {/* Header */}
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-bold font-display mb-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-              Let's work <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                together.
-              </span>
-            </h2>
-            <p className="text-lg text-slate-400 mb-12 leading-relaxed max-w-md">
-              Have a project in mind or just want to chat? I'm always open to discussing new ideas, opportunities, and finding ways to assist you.
-            </p>
+            Let's start a <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
+              conversation.
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
+          >
+            Interested in working together? I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+          </motion.p>
+        </div>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-                  <FaEnvelope size={20} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Mail Me</h4>
-                  <a href="mailto:devmuhammadaziz@gmail.com" className="text-xl font-medium text-white hover:text-indigo-400 transition-colors">
-                    devmuhammadaziz@gmail.com
-                  </a>
-                </div>
-              </div>
+        {/* Contact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-                  <FaPhoneAlt size={20} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Call Me</h4>
-                  <a href="tel:+998910671080" className="text-xl font-medium text-white hover:text-indigo-400 transition-colors">
-                    +998 91 067-10-80
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-                  <FaMapMarkerAlt size={20} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">Location</h4>
-                  <p className="text-xl font-medium text-white">
-                    Tashkent, Uzbekistan
-                  </p>
-                </div>
-              </div>
+          {/* Telegram Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-3xl flex flex-col items-center justify-center text-center group hover:bg-slate-800 transition-colors duration-300"
+          >
+            <div className="w-16 h-16 bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaTelegram size={28} />
             </div>
+            <h3 className="text-slate-500 font-bold uppercase tracking-wider text-sm mb-2">My Telegram</h3>
+            <a
+              href="https://t.me/rmuhammadaziz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors"
+            >
+              @rmuhammadaziz
+            </a>
           </motion.div>
 
-          {/* Right: Form */}
+          {/* Phone Card */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-slate-800/50 backdrop-blur-lg border border-slate-700 p-8 md:p-10 rounded-3xl"
+            transition={{ delay: 0.3 }}
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-3xl flex flex-col items-center justify-center text-center group hover:bg-slate-800 transition-colors duration-300"
           >
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-bold text-slate-400 uppercase tracking-wide">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-bold text-slate-400 uppercase tracking-wide">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-slate-400 uppercase tracking-wide">Message</label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none"
-                  placeholder="Tell me about your project..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 group"
-              >
-                Send Message
-                <FaPaperPlane className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-            </form>
+            <div className="w-16 h-16 bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 rounded-2xl flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaPhoneAlt size={28} />
+            </div>
+            <h3 className="text-slate-500 font-bold uppercase tracking-wider text-sm mb-2">Call Me</h3>
+            <a
+              href="tel:+998910671080"
+              className="text-xl md:text-2xl font-bold text-white hover:text-emerald-400 transition-colors whitespace-nowrap"
+            >
+              +998 91 067-10-80
+            </a>
           </motion.div>
 
+          {/* Email Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-3xl flex flex-col items-center justify-center text-center group hover:bg-slate-800 transition-colors duration-300"
+          >
+            <div className="w-16 h-16 bg-gradient-to-tr from-indigo-500/20 to-violet-500/20 rounded-2xl flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaEnvelope size={28} />
+            </div>
+            <h3 className="text-slate-500 font-bold uppercase tracking-wider text-sm mb-2">Email Me</h3>
+            <a
+              href="mailto:devmuhammadaziz@gmail.com"
+              className="text-lg md:text-2xl font-bold text-white hover:text-indigo-400 transition-colors truncate max-w-full px-2"
+              title="devmuhammadaziz@gmail.com"
+            >
+              devmuhammadaziz@gmail.com
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

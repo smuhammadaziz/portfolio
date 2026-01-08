@@ -132,8 +132,8 @@ function ExperienceSection() {
                       <FaBriefcase size={14} /> {exp.company}
                     </div>
                   </div>
-                  <div className="mt-2 md:mt-0 text-slate-500 font-medium text-sm bg-slate-50 px-3 py-1 rounded-full inline-block md:inline-flex items-center gap-2">
-                    <FaCalendarAlt size={12} /> {exp.period}
+                  <div className="mt-2 md:mt-0 text-slate-500 font-medium text-sm bg-slate-50 px-3 py-1 rounded-full inline-flex items-center gap-2 whitespace-nowrap">
+                    <FaCalendarAlt size={12} className="shrink-0" /> {exp.period}
                   </div>
                 </div>
 

@@ -38,10 +38,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p>&copy; {new Date().getFullYear()} Muhammadaziz Ravshanbekov. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Made with <FaHeart className="text-red-500 animate-pulse" /> in Tashkent
-          </p>
+          <p>&copy; {new Date().getFullYear()} Muhammadaziz. All rights reserved.</p>
         </div>
       </div>
     </footer>
