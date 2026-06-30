@@ -7,10 +7,23 @@ function ExperienceSection() {
 
   const experiences = [
     {
+      id: 0,
+      role: "Software Engineer",
+      company: "Single Integrator - UZINFOCOM",
+      period: "01/2026 - Present",
+      description: "Micro-service system",
+      tech: ["React", "Node.js", "AI", "PostgreSQL"],
+      details: [
+        "Led end-to-end development of an AI-powered logistics dispatching system.",
+        "Managed stakeholder communications and requirements gathering.",
+        "Implemented real-time monitoring and performance optimization strategies.",
+      ]
+    },
+    {
       id: 1,
       role: "Software Engineer",
       company: "Numeo AI",
-      period: "05/2025 - Present",
+      period: "05/2025 - 11/2025",
       description: "Leading the development of AI-powered logistics systems.",
       tech: ["React", "Node.js", "AI", "PostgreSQL"],
       details: [
@@ -21,7 +34,7 @@ function ExperienceSection() {
     },
     {
       id: 2,
-      role: "Full-Stack Developer",
+      role: "Software Engineer",
       company: "KSB-ERP ECOSYSTEM",
       period: "11/2024 - 05/2025",
       description: "Building comprehensive ERP solutions for enterprise management.",
@@ -34,7 +47,7 @@ function ExperienceSection() {
     },
     {
       id: 3,
-      role: "CTO & Frontend Developer",
+      role: "Software Engineer",
       company: "Educore Learning",
       period: "03/2024 - 08/2024",
       description: "Technical leadership for an online learning platform.",
@@ -47,7 +60,7 @@ function ExperienceSection() {
     },
     {
       id: 4,
-      role: "Python Full Stack Developer",
+      role: "Software Engineer",
       company: "Start Up Project",
       period: "01/2023 - 08/2024",
       description: "Feature-rich Telegram bot development.",
@@ -60,7 +73,7 @@ function ExperienceSection() {
     },
     {
       id: 5,
-      role: "Lead Web Developer",
+      role: "Software Engineer",
       company: "School 182",
       period: "02/2023 - 02/2024",
       description: "Digital transformation for an educational institution.",
@@ -73,7 +86,7 @@ function ExperienceSection() {
     },
     {
       id: 6,
-      role: "Frontend Developer",
+      role: "Software Engineer",
       company: "Start Up Company",
       period: "09/2022 - 12/2022",
       description: "UI/UX implementation for startup MVP.",
